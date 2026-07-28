@@ -100,46 +100,159 @@
   <script>
     const shops = [
       {id:1,name:"光復路時尚文化街",kr:"광복로 패션거리",area:"南浦洞",category:"潮流服飾",station:"南浦站 1、3 號出口",time:"約 10:00–21:00",price:"₩–₩₩",description:"釜山版明洞，運動品牌、韓系服飾與美妝一次逛齊；寬敞徒步區也很適合一路散步到 BIFF 廣場。",picks:["Nike / Adidas 旗艦店","ABC Mart","巷弄設計小店"],query:"광복로 패션거리 부산",featured:true},
-      {id:2,name:"樂天百貨 光復店",kr:"롯데백화점 광복점",area:"南浦洞",category:"百貨商場",station:"南浦站 8 號出口直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"百貨、超市與港景一次完成。建議傍晚上頂樓免費展望台，再到 B1 超市收尾採買。",picks:["B1 樂天超市","頂樓空中庭園","週六影島大橋開橋"],query:"롯데백화점 광복점",featured:true,storeHighlights:["SPAO","8seconds","ABC Mart","MLB","Olive Young"]},
+      {id:2,name:"樂天百貨 光復店",kr:"롯데백화점 광복점",area:"南浦洞",category:"百貨商場",station:"南浦站 8 號出口直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"百貨、超市與港景一次完成。建議傍晚上頂樓免費展望台，再到 B1 超市收尾採買。",picks:["B1 樂天超市","頂樓空中庭園","週六影島大橋開橋"],query:"롯데백화점 광복점",featured:true,storeHighlights:[
+        {name:"SPAO",audience:"都有",style:"平價韓系基本款"},
+        {name:"8seconds",audience:"都有",style:"韓系都會休閒"},
+        {name:"ABC Mart",audience:"都有",style:"球鞋運動風"},
+        {name:"MLB",audience:"都有",style:"街頭運動風"},
+        {name:"Olive Young",audience:"都有",style:"藥妝美妝"}
+      ]},
       {id:3,name:"國際市場",kr:"국제시장",area:"南浦洞",category:"傳統市場",station:"札嘎其站 7 號出口",time:"09:00–20:00・週日多休",price:"₩",description:"迷宮般的老市場，從棉被、生活雜貨到復古服飾都有，適合喜歡挖寶與在地感的人。",picks:["韓國棉被","編織菜瓜布","復古軍裝與生活雜貨"],query:"국제시장 부산"},
       {id:4,name:"富平罐頭市場",kr:"부평깡통시장",area:"南浦洞",category:"美食伴手禮",station:"札嘎其站 3、5 號出口",time:"市場至 20:00・夜市 19:30–23:30",price:"₩",description:"白天是傳統市場，晚上變身小吃夜市；動線窄，建議避開週末 20–21 點。",picks:["釜山魚糕","拌粉條","巨人炸雞"],query:"부평깡통시장",featured:true},
       {id:5,name:"KAKAO FRIENDS 釜山旗艦店",kr:"카카오프렌즈 부산플래그십스토어",area:"南浦洞",category:"生活雜貨",station:"南浦站步行約 5 分",time:"約 10:30–22:00",price:"₩–₩₩",description:"多層樓角色商品空間，餐具、文具與釜山限定周邊很適合送禮。",picks:["釜山限定商品","Ryan 周邊","實用文具家品"],query:"카카오프렌즈 부산플래그십스토어"},
       {id:6,name:"B&C 麵包店",kr:"비엔씨 제과",area:"南浦洞",category:"美食伴手禮",station:"南浦站步行約 5 分",time:"約 09:30–22:00",price:"₩",description:"釜山老字號麵包店，適合安排為逛街中途補給或離開前的甜點伴手禮。",picks:["紅豆麵包","鮮奶油麵包","即買即吃"],query:"비엔씨 광복본점"},
       {id:7,name:"西面地下街",kr:"서면지하도상가",area:"西面・田浦",category:"平價服飾",station:"西面站站內直結",time:"約 10:00–22:00",price:"₩",description:"不受天氣影響的平價掃貨主場，服飾、鞋包、美妝密集；出口多，記得以出口編號定位。",picks:["萬元韓系服飾","鞋包配件","雨天備案"],query:"서면지하도상가",featured:true},
-      {id:8,name:"樂天百貨 釜山本店",kr:"롯데백화점 부산본점",area:"西面・田浦",category:"百貨商場",station:"西面站直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"百貨、免稅店與餐飲集中，適合鎖定品牌與退稅採買，也可由地下街直接進入。",picks:["韓系設計品牌","樂天免稅店","雨天友善"],query:"롯데백화점 부산본점",storeHighlights:["A.P.C.","메종키츠네","뉴발란스","MLB","OIOI 컬렉션","로라로라","마하그리드","세터","시티브리즈","와키윌리","키르시","젝시믹스","룰루레몬","잔스포츠","스케쳐스","프로스펙스","폴로(남성)","띠어리(여성)","리(영)","알래스카","페이지플린","더 레노마","플레이키즈프로(나이키키즈)","오프로드"]},
+      {id:8,name:"樂天百貨 釜山本店",kr:"롯데백화점 부산본점",area:"西面・田浦",category:"百貨商場",station:"西面站直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"百貨、免稅店與餐飲集中，適合鎖定品牌與退稅採買，也可由地下街直接進入。",picks:["韓系設計品牌","樂天免稅店","雨天友善"],query:"롯데백화점 부산본점",storeHighlights:[
+        {name:"A.P.C.",audience:"都有",style:"法式極簡"},
+        {name:"메종키츠네 (Maison Kitsuné)",audience:"都有",style:"法式休閒街頭"},
+        {name:"뉴발란스 (New Balance)",audience:"都有",style:"復古運動休閒"},
+        {name:"MLB",audience:"都有",style:"韓系街頭運動"},
+        {name:"OIOI 컬렉션 (OiOi)",audience:"都有",style:"學院街頭"},
+        {name:"로라로라 (rolarola)",audience:"女裝",style:"網美系微辣高冷風"},
+        {name:"마하그리드 (mahagrid)",audience:"都有",style:"都市街頭"},
+        {name:"세터 (SATUR)",audience:"都有",style:"美式復古校園風"},
+        {name:"시티브리즈 (CITYBREEZE)",audience:"女裝",style:"簡約都會女裝"},
+        {name:"와키윌리 (Wacky Willy)",audience:"都有",style:"玩味街頭"},
+        {name:"키르시 (Kirsh)",audience:"女裝",style:"甜酷少女街頭"},
+        {name:"젝시믹스 (XEXYMIX)",audience:"女裝",style:"運動辣妹風"},
+        {name:"룰루레몬 (Lululemon)",audience:"都有",style:"都市機能風"},
+        {name:"잔스포츠 (JanSport)",audience:"都有",style:"校園戶外風"},
+        {name:"스케쳐스 (Skechers)",audience:"都有",style:"舒適運動休閒"},
+        {name:"프로스펙스 (PRO-SPECS)",audience:"都有",style:"經典運動休閒"},
+        {name:"폴로(남성) (Polo Ralph Lauren)",audience:"男裝",style:"美式經典紳士"},
+        {name:"띠어리(여성) (Theory)",audience:"女裝",style:"極簡都會質感"},
+        {name:"리(영) (LEE Young)",audience:"都有",style:"美式丹寧休閒"},
+        {name:"알래스카 (ALASKA)",audience:"都有",style:"戶外機能風"},
+        {name:"페이지플린 (Page Flint)",audience:"女裝",style:"法式溫柔通勤"},
+        {name:"더 레노마 (THE RENOMA)",audience:"都有",style:"商務休閒"},
+        {name:"플레이키즈프로 (Playkids Pro)",audience:"兒童",style:"童裝運動休閒"},
+        {name:"오프로드 (Offroad)",audience:"男裝",style:"戶外休閒風"}
+      ]},
       {id:9,name:"Object 田浦店",kr:"오브젝트 전포점",area:"西面・田浦",category:"選物",station:"田浦站 7 號出口",time:"約 12:00–21:00",price:"₩–₩₩",description:"文具與插畫選物迷的口袋名單，多位韓國創作者商品集中，適合慢慢挑小禮物。",picks:["插畫文具","韓國創作者小物","質感送禮"],query:"오브젝트 전포점",featured:true},
       {id:10,name:"MUSINSA STANDARD 西面",kr:"무신사 스탠다드 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 4 分",time:"約 11:00–21:30",price:"₩–₩₩",description:"韓國年輕族群常穿的極簡基本款，版型與尺寸齊全，男女裝都好搭。",picks:["西裝外套","寬版長褲","簡約基本款"],query:"무신사 스탠다드 서면",featured:true},
       {id:11,name:"Olive Young 西面中央店",kr:"올리브영 서면중앙점",area:"西面・田浦",category:"藥妝美妝",station:"西面站 2 號出口",time:"約 10:00–22:30",price:"₩–₩₩",description:"商圈核心的大型門市，彩妝、保養、髮品和零食一次補齊；先比價組合包再結帳。",picks:["面膜與 CICA 保養","痘痘貼","Delight Project 零食"],query:"올리브영 서면중앙점",featured:true},
       {id:12,name:"田浦咖啡街",kr:"전포카페거리",area:"西面・田浦",category:"咖啡休息",station:"田浦站 7 號出口",time:"多為 11:00–22:00",price:"₩–₩₩",description:"五金老街轉型的咖啡與小店聚落，建議午後安排 2–3 小時，邊逛選物邊休息。",picks:["獨立咖啡店","巷弄選物","拍照散策"],query:"전포카페거리 부산"},
-      {id:13,name:"新世界百貨 Centum City",kr:"신세계백화점 센텀시티점",area:"海雲台・Centum",category:"百貨商場",station:"Centum City 站直結",time:"10:30–20:00・週末至 20:30",price:"₩₩–₩₩₩",description:"從精品、韓國設計師品牌到 Spa Land 都在同一棟，雨天或想高效率購物的首選。",picks:["韓國設計師品牌","Spa Land","大型書店與餐飲"],query:"신세계백화점 센텀시티점",featured:true,storeHighlights:["thisisneverthat","REST & RECREATION","MUSINSA STANDARD","ABC Mart","Olive Young","MLB","A.P.C.","메종키츠네","디젤","캐나다구스","폴로(남성)","뉴발란스","룰루레몬","젝시믹스","시리즈","바버(맨)"]},
+      {id:13,name:"新世界百貨 Centum City",kr:"신세계백화점 센텀시티점",area:"海雲台・Centum",category:"百貨商場",station:"Centum City 站直結",time:"10:30–20:00・週末至 20:30",price:"₩₩–₩₩₩",description:"從精品、韓國設計師品牌到 Spa Land 都在同一棟，雨天或想高效率購物的首選。",picks:["韓國設計師品牌","Spa Land","大型書店與餐飲"],query:"신세계백화점 센텀시티점",featured:true,storeHighlights:[
+        {name:"thisisneverthat",audience:"都有",style:"復古街頭"},
+        {name:"REST & RECREATION",audience:"女裝",style:"網美系微辣高冷風"},
+        {name:"MUSINSA STANDARD",audience:"都有",style:"極簡都市通勤"},
+        {name:"ABC Mart",audience:"都有",style:"球鞋運動風"},
+        {name:"Olive Young",audience:"都有",style:"藥妝美妝"},
+        {name:"MLB",audience:"都有",style:"韓系街頭運動"},
+        {name:"A.P.C.",audience:"都有",style:"法式極簡"},
+        {name:"메종키츠네 (Maison Kitsuné)",audience:"都有",style:"法式休閒街頭"},
+        {name:"디젤 (Diesel)",audience:"都有",style:"叛逆丹寧街頭"},
+        {name:"캐나다구스 (Canada Goose)",audience:"都有",style:"高端戶外機能"},
+        {name:"폴로(남성) (Polo Ralph Lauren)",audience:"男裝",style:"美式經典紳士"},
+        {name:"뉴발란스 (New Balance)",audience:"都有",style:"復古運動休閒"},
+        {name:"룰루레몬 (Lululemon)",audience:"都有",style:"都市機能風"},
+        {name:"젝시믹스 (XEXYMIX)",audience:"女裝",style:"運動辣妹風"},
+        {name:"시리즈 (Series)",audience:"男裝",style:"都會質感男裝"},
+        {name:"바버(맨) (Barbour)",audience:"男裝",style:"英式戶外紳士"}
+      ]},
       {id:14,name:"海理團路",kr:"해리단길",area:"海雲台・Centum",category:"選物",station:"海雲台站 4 號出口",time:"多為 11:00–20:00",price:"₩–₩₩",description:"舊車站後方的低矮住宅改造街區，獨立品牌、底片相機與小型選物店密集。",picks:["獨立設計品牌","底片相機店","老宅咖啡"],query:"해리단길",featured:true},
       {id:15,name:"LUFT MANSION",kr:"루프트맨션",area:"海雲台・Centum",category:"選物",station:"海雲台站步行約 7 分",time:"約 11:00–20:00",price:"₩₩",description:"海理團路的人氣生活風格選物店，從香氛、家飾到小眾配件都很有完成度。",picks:["香氛","家居選品","小眾飾品"],query:"루프트맨션 해리단길"},
       {id:16,name:"BUSAN BADA SAND",kr:"부산바다샌드",area:"海雲台・Centum",category:"美食伴手禮",station:"海雲台站步行約 5 分",time:"約 10:00–19:00・售完為止",price:"₩",description:"白熊招牌的釜山限定夾心餅乾，以奶油與釜山蜂蜜製作，熱門時段可能排隊。",picks:["焦糖奶油夾心","海鷗白熊包裝","建議先買再逛"],query:"부산바다샌드 해운대점",featured:true},
       {id:17,name:"海雲台大街 Olive Young",kr:"올리브영 해운대타운점",area:"海雲台・Centum",category:"藥妝美妝",station:"海雲台站 5 號出口",time:"約 10:00–23:00",price:"₩–₩₩",description:"從地鐵站走往沙灘途中即可採買，營業較晚，適合把藥妝補貨留到晚餐後。",picks:["熱門美妝","旅行裝與組合包","夜間補貨"],query:"올리브영 해운대타운점"},
-      {id:18,name:"樂天 Premium Outlet 東釜山",kr:"롯데프리미엄아울렛 동부산점",area:"機張・Osiria",category:"Outlet",station:"Osiria 站步行約 10 分",time:"10:30–20:30・週末至 21:00",price:"₩–₩₩₩",description:"適合安排半天以上的大型 Outlet，國際品牌、樂天超市與餐飲齊全，親子也好逛。",picks:["折扣運動品牌","國際精品","順遊海東龍宮寺"],query:"롯데프리미엄아울렛 동부산점",featured:true,storeHighlights:["MUSINSA STANDARD","8seconds","ABC Mart","Nike","The North Face","Levi's","Guess","Mindbridge","Wacky Willy","Polham","Lee","JanSport","Adidas","New Balance","Converse","Vans"]},
+      {id:18,name:"樂天 Premium Outlet 東釜山",kr:"롯데프리미엄아울렛 동부산점",area:"機張・Osiria",category:"Outlet",station:"Osiria 站步行約 10 分",time:"10:30–20:30・週末至 21:00",price:"₩–₩₩₩",description:"適合安排半天以上的大型 Outlet，國際品牌、樂天超市與餐飲齊全，親子也好逛。",picks:["折扣運動品牌","國際精品","順遊海東龍宮寺"],query:"롯데프리미엄아울렛 동부산점",featured:true,storeHighlights:[
+        {name:"MUSINSA STANDARD",audience:"都有",style:"極簡都市通勤"},
+        {name:"8seconds",audience:"都有",style:"韓系都會休閒"},
+        {name:"ABC Mart",audience:"都有",style:"球鞋運動風"},
+        {name:"Nike",audience:"都有",style:"運動機能"},
+        {name:"The North Face",audience:"都有",style:"戶外機能風"},
+        {name:"Levi's",audience:"都有",style:"美式丹寧工裝"},
+        {name:"Guess",audience:"都有",style:"性感休閒丹寧"},
+        {name:"Mindbridge",audience:"男裝",style:"商務休閒"},
+        {name:"Wacky Willy",audience:"都有",style:"玩味街頭"},
+        {name:"Polham",audience:"都有",style:"簡約日常基本款"},
+        {name:"Lee",audience:"都有",style:"美式丹寧休閒"},
+        {name:"JanSport",audience:"都有",style:"校園戶外風"},
+        {name:"Adidas",audience:"都有",style:"運動街頭"},
+        {name:"New Balance",audience:"都有",style:"復古運動休閒"},
+        {name:"Converse",audience:"都有",style:"經典帆布街頭"},
+        {name:"Vans",audience:"都有",style:"滑板街頭"}
+      ]},
       {id:19,name:"m・millac",kr:"밀락더마켓",area:"廣安里",category:"選物",station:"廣安站轉公車或計程車",time:"約 10:00–24:00",price:"₩–₩₩",description:"面海的複合文化空間，餐飲、快閃選物與廣安大橋夜景一次完成，傍晚造訪最有氣氛。",picks:["海景餐飲","期間限定快閃","廣安大橋夜景"],query:"밀락더마켓 부산"},
       {id:20,name:"釜田市場",kr:"부전시장",area:"西面・田浦",category:"傳統市場",station:"釜田站 1 號出口",time:"約 05:00–19:00",price:"₩",description:"比觀光商圈更生活化的傳統市場，乾貨、蔘品與日常食材選擇多，適合早上逛。",picks:["乾貨與海苔","人蔘藥材","在地市場感"],query:"부전시장 부산"},
-      {id:21,name:"Luft Basement",kr:"루프트베이스먼트",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 6 分",time:"12:00–20:00",price:"₩₩–₩₩₩",description:"釜山非常代表性的選貨店，常見韓國街頭品牌與設計師品牌，也有二樓咖啡空間可休息。",picks:["ANDERSSON BELL","MSCHF","thisisneverthat"],query:"루프트베이스먼트 부산 전포",featured:true},
-      {id:22,name:"BALANSA 西面",kr:"발란사 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 8 分",time:"12:00–19:00",price:"₩₩",description:"滑板與街頭文化取向強烈的選物/服飾店，西面很適合排進同一段一起逛。",picks:["街頭品牌","Vintage","聯名單品"],query:"발란사 서면 부산"},
+      {id:21,name:"Luft Basement",kr:"루프트베이스먼트",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 6 分",time:"12:00–20:00",price:"₩₩–₩₩₩",description:"釜山非常代表性的選貨店，常見韓國街頭品牌與設計師品牌，也有二樓咖啡空間可休息。",picks:["ANDERSSON BELL","MSCHF","thisisneverthat"],query:"루프트베이스먼트 부산 전포",featured:true,audience:"都有",style:"韓系街頭選物"},
+      {id:22,name:"BALANSA 西面",kr:"발란사 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 8 分",time:"12:00–19:00",price:"₩₩",description:"滑板與街頭文化取向強烈的選物/服飾店，西面很適合排進同一段一起逛。",picks:["街頭品牌","Vintage","聯名單品"],query:"발란사 서면 부산",audience:"都有",style:"滑板街頭"},
       {id:23,name:"AVIVERE Company",kr:"아비베르 컴퍼니",area:"西面・田浦",category:"選物",station:"田浦站步行約 5 分",time:"11:00–23:00",price:"₩₩",description:"包款、飾品與生活物件的大型選物店，適合買伴手禮或補齊穿搭配件。",picks:["包包","飾品","家居小物"],query:"아비베르 컴퍼니 부산 전포",featured:true},
-      {id:24,name:"ADER ERROR 서면 스페이스",kr:"아더에러 서면 스페이스",area:"西面・田浦",category:"潮流服飾",station:"西面站／田浦站步行約 7 分",time:"13:00–21:00",price:"₩₩₩",description:"ADER ERROR 在釜山的代表據點，店內以實驗性空間與品牌服裝、配件為主。",picks:["設計感上衣","外套與配件","旗艦空間"],query:"아더에러 서면 스페이스",featured:true},
-      {id:25,name:"thisisneverthat Busan",kr:"디스이즈네버댓 부산",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站 B2F",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"來自官方商店資訊的釜山店，位於新世界百貨 Centum City 地下樓層，街頭感很完整。",picks:["Logo Tee","Hoodie","Cap"],query:"thisisneverthat Busan Shinsegae Centum City",featured:true},
-      {id:26,name:"MUSINSA STANDARD Centum",kr:"무신사 스탠다드 센텀시티점",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩–₩₩",description:"官方新聞稿確認的釜山第三間門市，除了基本款也有 SPORT、KIDS 線可看。",picks:["基本款襯衫","西裝外套","SPORT 線"],query:"무신사 스탠다드 센텀시티점",featured:true},
-      {id:27,name:"8seconds 釜山本店",kr:"에잇세컨즈 롯데백화점 부산본점",area:"西面・田浦",category:"潮流服飾",station:"西面站 2F",time:"10:00–20:00",price:"₩–₩₩",description:"韓系 SPA 服飾品牌，價格親民又好搭，是百貨內很實用的快速補貨點。",picks:["當季上衣","襯衫","休閒長褲"],query:"에잇세컨즈 롯데백화점 부산본점"},
-      {id:28,name:"SPAO 光復店",kr:"스파오 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩–₩₩",description:"韓國人氣 SPA，常被比作韓版 Uniqlo，放在百貨裡很適合順手補基本款。",picks:["基本上衣","聯名系列","家居睡衣"],query:"SPAO 롯데백화점 광복점"},
-      {id:29,name:"ABC Mart Centum",kr:"ABC마트 신세계 센텀시티점",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:30",price:"₩–₩₩",description:"運動鞋與潮流鞋款一次看齊，若你要找 Nike、Adidas、New Balance 這裡很有效率。",picks:["球鞋","運動鞋","鞋襪配件"],query:"ABC마트 신세계 센텀시티점"},
-      {id:30,name:"REST & RECREATION",kr:"레스트앤레크레이션",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:30",price:"₩₩–₩₩₩",description:"在新世界百貨可見到的韓系時裝品牌，適合喜歡俐落線條和輕奢感的人。",picks:["上衣","外套","簡潔搭配"],query:"레스트앤레크레이션 센텀시티"},
-      {id:31,name:"MLB 釜山本店",kr:"엠엘비 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩₩",description:"韓系街頭風很強的帽款與休閒服飾品牌，百貨內常見，適合快速加購一頂帽子。",picks:["棒球帽","運動風上衣","輕街頭單品"],query:"엠엘비 롯데백화점 광복점"},
+      {id:24,name:"ADER ERROR 서면 스페이스",kr:"아더에러 서면 스페이스",area:"西面・田浦",category:"潮流服飾",station:"西面站／田浦站步行約 7 分",time:"13:00–21:00",price:"₩₩₩",description:"ADER ERROR 在釜山的代表據點，店內以實驗性空間與品牌服裝、配件為主。",picks:["設計感上衣","外套與配件","旗艦空間"],query:"아더에러 서면 스페이스",featured:true,audience:"都有",style:"前衛解構街頭"},
+      {id:25,name:"thisisneverthat Busan",kr:"디스이즈네버댓 부산",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站 B2F",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"來自官方商店資訊的釜山店，位於新世界百貨 Centum City 地下樓層，街頭感很完整。",picks:["Logo Tee","Hoodie","Cap"],query:"thisisneverthat Busan Shinsegae Centum City",featured:true,audience:"都有",style:"復古街頭"},
+      {id:26,name:"MUSINSA STANDARD Centum",kr:"무신사 스탠다드 센텀시티점",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩–₩₩",description:"官方新聞稿確認的釜山第三間門市，除了基本款也有 SPORT、KIDS 線可看。",picks:["基本款襯衫","西裝外套","SPORT 線"],query:"무신사 스탠다드 센텀시티점",featured:true,audience:"都有",style:"極簡都市通勤"},
+      {id:27,name:"8seconds 釜山本店",kr:"에잇세컨즈 롯데백화점 부산본점",area:"西面・田浦",category:"潮流服飾",station:"西面站 2F",time:"10:00–20:00",price:"₩–₩₩",description:"韓系 SPA 服飾品牌，價格親民又好搭，是百貨內很實用的快速補貨點。",picks:["當季上衣","襯衫","休閒長褲"],query:"에잇세컨즈 롯데백화점 부산본점",audience:"都有",style:"韓系都會休閒"},
+      {id:28,name:"SPAO 光復店",kr:"스파오 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩–₩₩",description:"韓國人氣 SPA，常被比作韓版 Uniqlo，放在百貨裡很適合順手補基本款。",picks:["基本上衣","聯名系列","家居睡衣"],query:"SPAO 롯데백화점 광복점",audience:"都有",style:"平價韓系基本款"},
+      {id:29,name:"ABC Mart Centum",kr:"ABC마트 신세계 센텀시티점",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:30",price:"₩–₩₩",description:"運動鞋與潮流鞋款一次看齊，若你要找 Nike、Adidas、New Balance 這裡很有效率。",picks:["球鞋","運動鞋","鞋襪配件"],query:"ABC마트 신세계 센텀시티점",audience:"都有",style:"球鞋運動風"},
+      {id:30,name:"REST & RECREATION",kr:"레스트앤레크레이션",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:30",price:"₩₩–₩₩₩",description:"在新世界百貨可見到的韓系時裝品牌，適合喜歡俐落線條和輕奢感的人。",picks:["上衣","外套","簡潔搭配"],query:"레스트앤레크레이션 센텀시티",audience:"女裝",style:"網美系微辣高冷風"},
+      {id:31,name:"MLB 釜山本店",kr:"엠엘비 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩₩",description:"韓系街頭風很強的帽款與休閒服飾品牌，百貨內常見，適合快速加購一頂帽子。",picks:["棒球帽","運動風上衣","輕街頭單品"],query:"엠엘비 롯데백화점 광복점",audience:"都有",style:"韓系街頭運動"},
       {id:32,name:"TOPTEN 西面店",kr:"탑텐 서면",area:"西面・田浦",category:"平價服飾",station:"西面站步行約 5 分",time:"10:30–22:00",price:"₩",description:"在地人很常買的高 CP 值基本款品牌，若想補衣櫃缺口很方便。",picks:["T 恤","襯衫","休閒褲"],query:"탑텐 서면 부산"},
       {id:33,name:"Olive Young Centum",kr:"올리브영 센텀시티점",area:"海雲台・Centum",category:"藥妝美妝",station:"Centum City 站直結",time:"10:30–22:00",price:"₩–₩₩",description:"百貨動線中的便利補貨點，買完百貨服飾順手帶走藥妝最省時。",picks:["面膜","彩妝","旅行組"],query:"올리브영 센텀시티점"},
-      {id:34,name:"Nerdy 田浦店",kr:"널디 전포",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 6 分",time:"12:00–20:30",price:"₩₩",description:"韓國年輕族群常見的街頭運動風品牌，若喜歡大 Logo 與寬鬆版型可以直接收。",picks:["運動套裝","Logo 外套","帽踢"],query:"널디 전포 부산"},
-      {id:35,name:"Kasina 田浦店",kr:"카시나 전포점",area:"西面・田浦",category:"潮流服飾",station:"西面站／田浦站步行約 8 分",time:"12:00–21:00",price:"₩₩–₩₩₩",description:"1997 年起家的 부산 스케이트 숍，現在是代表性的潮流選物店，球鞋與街頭品牌都很齊。",picks:["限量球鞋","街頭品牌","選物"],query:"카시나 전포점 부산",featured:true},
-      {id:36,name:"Panier 田浦店",kr:"파니에 전포점",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 7 分",time:"12:00–20:30",price:"₩₩",description:"位在 ADER ERROR 附近的時髦選物點，適合想一起逛街頭風品牌和日常穿搭的人。",picks:["選物","日常穿搭","配件"],query:"파니에 전포점 부산"},
-      {id:37,name:"Breche 田浦店",kr:"브레슈 전포점",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 7 分",time:"12:00–20:30",price:"₩₩",description:"主打 unisex casual 風格，版型舒服、風格俐落，是西面很適合補一件的店。",picks:["中性休閒","上衣","外套"],query:"브레슈 전포점 부산"},
-      {id:38,name:"YOUSSOFUL 田浦店",kr:"유쏘풀 전포점",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 6 分",time:"11:00–21:00",price:"₩₩",description:"雖然以香氛著名，但店舖在西面最潮的街區，適合和穿搭選物一起排進行程。",picks:["香氛禮物","生活小物","送禮"],query:"유쏘풀 전포점 부산"},
-      {id:39,name:"VRESSU 田浦店",kr:"브레슈 전포/브레슈",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 7 分",time:"12:00–20:00",price:"₩₩",description:"從 ADER ERROR 周邊延伸出來的中性穿搭店，適合想找舒服剪裁和休閒風的人。",picks:["中性休閒","褲裝","日常穿搭"],query:"브레슈 전포 부산"},
-      {id:40,name:"Lakai 田浦店",kr:"라카이 전포점",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 8 分",time:"12:00–20:00",price:"₩₩",description:"街頭與滑板客群常看的鞋服品牌，和 Kasina、Balansa 很適合排成同一段。",picks:["滑板風","球鞋","服飾"],query:"라카이 전포 부산"},
-      {id:41,name:"Street Archive 田浦",kr:"스트릿 아카이브 전포",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 7 分",time:"12:00–20:30",price:"₩₩",description:"街頭文化風格選物店，適合找帽 T、外套和聯名小物。",picks:["帽踢","外套","聯名小物"],query:"스트릿 아카이브 전포 부산"}
+      {id:34,name:"Nerdy 田浦店",kr:"널디 전포",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 6 分",time:"12:00–20:30",price:"₩₩",description:"韓國年輕族群常見的街頭運動風品牌，若喜歡大 Logo 與寬鬆版型可以直接收。",picks:["運動套裝","Logo 外套","帽踢"],query:"널디 전포 부산",audience:"都有",style:"街頭運動風"},
+      {id:35,name:"Kasina 田浦店",kr:"카시나 전포점",area:"西面・田浦",category:"潮流服飾",station:"西面站／田浦站步行約 8 分",time:"12:00–21:00",price:"₩₩–₩₩₩",description:"1997 年起家的 부산 스케이트 숍，現在是代表性的潮流選物店，球鞋與街頭品牌都很齊。",picks:["限量球鞋","街頭品牌","選物"],query:"카시나 전포점 부산",featured:true,audience:"都有",style:"滑板街頭"},
+      {id:36,name:"Panier 田浦店",kr:"파니에 전포점",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 7 分",time:"12:00–20:30",price:"₩₩",description:"位在 ADER ERROR 附近的時髦選物點，適合想一起逛街頭風品牌和日常穿搭的人。",picks:["選物","日常穿搭","配件"],query:"파니에 전포점 부산",audience:"都有",style:"都會選物"},
+      {id:37,name:"Breche 田浦店",kr:"브레슈 전포점",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 7 分",time:"12:00–20:30",price:"₩₩",description:"主打 unisex casual 風格，版型舒服、風格俐落，是西面很適合補一件的店。",picks:["中性休閒","上衣","外套"],query:"브레슈 전포점 부산",audience:"都有",style:"中性休閒"},
+      {id:38,name:"YOUSSOFUL 田浦店",kr:"유쏘풀 전포점",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 6 分",time:"11:00–21:00",price:"₩₩",description:"雖然以香氛著名，但店舖在西面最潮的街區，適合和穿搭選物一起排進行程。",picks:["香氛禮物","生活小物","送禮"],query:"유쏘풀 전포점 부산",audience:"都有",style:"生活風格選物"},
+      {id:39,name:"VRESSU 田浦店",kr:"브레슈 전포/브레슈",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 7 分",time:"12:00–20:00",price:"₩₩",description:"從 ADER ERROR 周邊延伸出來的中性穿搭店，適合想找舒服剪裁和休閒風的人。",picks:["中性休閒","褲裝","日常穿搭"],query:"브레슈 전포 부산",audience:"都有",style:"中性休閒"},
+      {id:40,name:"Lakai 田浦店",kr:"라카이 전포점",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 8 分",time:"12:00–20:00",price:"₩₩",description:"街頭與滑板客群常看的鞋服品牌，和 Kasina、Balansa 很適合排成同一段。",picks:["滑板風","球鞋","服飾"],query:"라카이 전포 부산",audience:"都有",style:"滑板街頭"},
+      {id:41,name:"Street Archive 田浦",kr:"스트릿 아카이브 전포",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 7 分",time:"12:00–20:30",price:"₩₩",description:"街頭文化風格選物店，適合找帽 T、外套和聯名小物。",picks:["帽踢","外套","聯名小物"],query:"스트릿 아카이브 전포 부산",audience:"都有",style:"街頭文化選物"}
+      ,{id:42,name:"UNIQLO 光復店",kr:"유니클로 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩–₩₩",description:"百貨裡最實用的基本款補貨點，T 恤、外套與機能單品都很好搭。",picks:["AIRism","基本 T 恤","機能外套"],query:"유니클로 롯데백화점 광복점",audience:"都有",style:"極簡日常"}
+      ,{id:43,name:"ZARA 光復店",kr:"자라 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩₩",description:"快速掌握最新歐系趨勢的好地方，適合找約會或旅行穿搭。",picks:["洋裝","西裝外套","時髦上衣"],query:"자라 롯데백화점 광복점",audience:"都有",style:"歐系都會時髦"}
+      ,{id:44,name:"H&M 光復店",kr:"에이치앤엠 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩",description:"價格好入手，適合補基本款、配件和季節單品。",picks:["基本款","配件","當季單品"],query:"에이치앤엠 롯데백화점 광복점",audience:"都有",style:"平價都會休閒"}
+      ,{id:45,name:"Nike 光復店",kr:"나이키 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"運動潮流代表品牌，鞋、衣與配件都能一次補齊。",picks:["球鞋","運動上衣","帽款"],query:"나이키 롯데백화점 광복점",audience:"都有",style:"運動機能"}
+      ,{id:46,name:"Adidas 光復店",kr:"아디다스 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩₩",description:"三條線經典運動風，適合搭配街頭穿搭。",picks:["運動套裝","球鞋","帽 T"],query:"아디다스 롯데백화점 광복점",audience:"都有",style:"運動街頭"}
+      ,{id:47,name:"MUSINSA STANDARD 光復",kr:"무신사 스탠다드 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩–₩₩",description:"在百貨裡補極簡基本款很方便，版型與尺寸選擇齊。",picks:["襯衫","西裝外套","長褲"],query:"무신사 스탠다드 롯데백화점 광복점",audience:"都有",style:"極簡都市通勤"}
+      ,{id:48,name:"TOPTEN 光復店",kr:"탑텐 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩",description:"高 CP 值基本款品牌，換季補貨非常適合。",picks:["T 恤","休閒褲","針織"],query:"탑텐 롯데백화점 광복점",audience:"都有",style:"平價基本款"}
+      ,{id:49,name:"SPAO 西面店",kr:"스파오 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 3 分",time:"10:30–22:00",price:"₩–₩₩",description:"西面區超實用的平價潮流品牌，聯名款和基本款都好找。",picks:["聯名款","睡衣","基本上衣"],query:"스파오 서면",audience:"都有",style:"平價韓系基本款"}
+      ,{id:50,name:"8seconds 西面店",kr:"에잇세컨즈 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 4 分",time:"10:30–22:00",price:"₩–₩₩",description:"韓系快速時髦的代表，適合找當季輪廓與通勤單品。",picks:["襯衫","西裝外套","長褲"],query:"에잇세컨즈 서면",audience:"都有",style:"韓系都會休閒"}
+      ,{id:51,name:"UNIQLO 西面店",kr:"유니클로 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 4 分",time:"10:30–22:00",price:"₩–₩₩",description:"西面基本款補貨核心，適合先打底再逛潮流店。",picks:["AIRism","外套","基本款 T"],query:"유니클로 서면",audience:"都有",style:"極簡日常"}
+      ,{id:52,name:"ZARA 西面店",kr:"자라 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 5 分",time:"10:30–22:00",price:"₩₩",description:"想找比較有造型感的單品，可以先從這裡看起。",picks:["洋裝","外套","配件"],query:"자라 서면",audience:"都有",style:"歐系都會時髦"}
+      ,{id:53,name:"H&M 西面店",kr:"에이치앤엠 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 5 分",time:"10:30–22:00",price:"₩",description:"價格友善，適合補基礎款與季節配件。",picks:["基本款","針織","帽子"],query:"에이치앤엠 서면",audience:"都有",style:"平價都會休閒"}
+      ,{id:54,name:"Nike 西面",kr:"나이키 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 6 分",time:"10:30–22:00",price:"₩₩–₩₩₩",description:"運動潮流代表品牌，西面很適合和街頭選物一起排。",picks:["球鞋","運動上衣","帽款"],query:"나이키 서면",audience:"都有",style:"運動機能"}
+      ,{id:55,name:"Adidas 西面",kr:"아디다스 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 6 分",time:"10:30–22:00",price:"₩₩",description:"經典三條線單品，街頭與運動穿搭都好搭。",picks:["球鞋","運動套裝","帽踢"],query:"아디다스 서면",audience:"都有",style:"運動街頭"}
+      ,{id:56,name:"MUSINSA STANDARD 西面旗艦",kr:"무신사 스탠다드 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 4 分",time:"11:00–21:30",price:"₩–₩₩",description:"極簡基本款的高效率補貨點，適合男女裝都一起看。",picks:["襯衫","西裝外套","長褲"],query:"무신사 스탠다드 서면",audience:"都有",style:"極簡都市通勤"}
+      ,{id:57,name:"Mardi Mercredi 西面",kr:"마르디 메크르디 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 6 分",time:"11:00–21:00",price:"₩₩",description:"近年很紅的圖騰 T 與女性向穿搭品牌，適合喜歡法式休閒感。",picks:["Logo Tee","上衣","休閒裙"],query:"마르디 메크르디 서면",audience:"女裝",style:"法式休閒街頭"}
+      ,{id:58,name:"CHARM'S 西面",kr:"참스 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 7 分",time:"11:00–20:30",price:"₩₩",description:"韓國女生很常穿的浪漫街頭風，拍照感很強。",picks:["上衣","洋裝","配件"],query:"참스 서면",audience:"女裝",style:"網美系微辣高冷風"}
+      ,{id:59,name:"MLB 西面",kr:"엠엘비 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 5 分",time:"10:30–22:00",price:"₩₩",description:"帽款與運動休閒單品齊全，街頭感很完整。",picks:["棒球帽","上衣","外套"],query:"엠엘비 서면",audience:"都有",style:"韓系街頭運動"}
+      ,{id:60,name:"New Balance 西面",kr:"뉴발란스 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 5 分",time:"10:30–22:00",price:"₩₩",description:"復古跑鞋與日常運動服飾很值得看。",picks:["球鞋","運動外套","帽款"],query:"뉴발란스 서면",audience:"都有",style:"復古運動休閒"}
+      ,{id:61,name:"thisisneverthat 西面",kr:"디스이즈네버댓 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 8 分",time:"12:00–21:00",price:"₩₩",description:"如果你喜歡復古街頭和圖像感，這家很適合排進西面。",picks:["Logo Tee","帽 T","外套"],query:"디스이즈네버댓 서면",audience:"都有",style:"復古街頭"}
+      ,{id:62,name:"Ader Error 田浦分店",kr:"아더에러 전포",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 6 分",time:"13:00–21:00",price:"₩₩₩",description:"解構感與藝術感都很強，屬於田浦必看品牌。",picks:["設計款上衣","外套","配件"],query:"아더에러 전포",audience:"都有",style:"前衛解構街頭"}
+      ,{id:63,name:"GENTLE MONSTER 釜山",kr:"젠틀몬스터 부산",area:"南浦洞",category:"潮流服飾",station:"南浦站步行約 7 分",time:"10:30–20:00",price:"₩₩₩",description:"雖然是眼鏡品牌，但在潮流穿搭裡很常被一起看，適合配整體造型。",picks:["墨鏡","眼鏡","配件"],query:"젠틀몬스터 광복로",audience:"都有",style:"未來感時髦"}
+      ,{id:64,name:"COS Centum",kr:"코스 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"很適合喜歡極簡、俐落和質感剪裁的人。",picks:["襯衫","大衣","針織"],query:"코스 센텀시티",audience:"都有",style:"極簡高質感"}
+      ,{id:65,name:"ZARA Centum",kr:"자라 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩",description:"百貨動線上很方便，適合找歐系趨勢款。",picks:["洋裝","外套","鞋包"],query:"자라 센텀시티",audience:"都有",style:"歐系都會時髦"}
+      ,{id:66,name:"UNIQLO Centum",kr:"유니클로 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩–₩₩",description:"大型百貨裡最省時的基本款補貨點。",picks:["AIRism","褲裝","外套"],query:"유니클로 센텀시티",audience:"都有",style:"極簡日常"}
+      ,{id:67,name:"NIKE Centum",kr:"나이키 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"運動機能和街頭搭配都很強。",picks:["球鞋","運動上衣","帽子"],query:"나이키 센텀시티",audience:"都有",style:"運動機能"}
+      ,{id:68,name:"Adidas Centum",kr:"아디다스 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩",description:"經典運動街頭風，若你喜歡三條線可直接看。",picks:["球鞋","外套","運動套裝"],query:"아디다스 센텀시티",audience:"都有",style:"運動街頭"}
+      ,{id:69,name:"Polo Ralph Lauren Centum",kr:"폴로 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩₩",description:"百貨裡的經典美式學院感代表。",picks:["襯衫","針織","Polo 衫"],query:"폴로 센텀시티",audience:"都有",style:"美式復古校園風"}
+      ,{id:70,name:"Barbour Centum",kr:"바버 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩₩",description:"英式戶外與城市休閒感都很穩。",picks:["外套","襯衫","針織"],query:"바버 센텀시티",audience:"都有",style:"英式戶外紳士"}
+      ,{id:71,name:"Canada Goose Centum",kr:"캐나다구스 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩₩",description:"高機能與高保暖的代表，冬季非常實用。",picks:["羽絨外套","毛帽","配件"],query:"캐나다구스 센텀시티",audience:"都有",style:"高端戶外機能"}
+      ,{id:72,name:"The North Face Centum",kr:"노스페이스 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"戶外機能、日常外套與親子款都很齊。",picks:["外套","背包","機能鞋"],query:"노스페이스 센텀시티",audience:"都有",style:"戶外機能風"}
+      ,{id:73,name:"Lululemon Centum",kr:"룰루레몬 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩₩",description:"都會機能與運動日常很適合一起看。",picks:["瑜珈褲","上衣","運動外套"],query:"룰루레몬 센텀시티",audience:"都有",style:"都市機能風"}
+      ,{id:74,name:"XEXYMIX Centum",kr:"젝시믹스 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩",description:"女生喜歡的運動辣妹風很強。",picks:["運動內搭","leggings","上衣"],query:"젝시믹스 센텀시티",audience:"女裝",style:"運動辣妹風"}
+      ,{id:75,name:"REST & RECREATION Centum",kr:"레스트앤레크레이션 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:30",price:"₩₩–₩₩₩",description:"女裝風格很完整，偏俐落冷感的韓系時裝。",picks:["上衣","外套","套裝"],query:"레스트앤레크레이션 센텀시티",audience:"女裝",style:"網美系微辣高冷風"}
+      ,{id:76,name:"Mardi Mercredi 光復",kr:"마르디 메크르디 광복",area:"南浦洞",category:"潮流服飾",station:"南浦站步行約 6 分",time:"11:00–21:00",price:"₩₩",description:"釜山港都商圈也很適合看的法式圖騰風女裝。",picks:["Logo Tee","上衣","休閒裙"],query:"마르디 메크르디 광복",audience:"女裝",style:"法式休閒街頭"}
+      ,{id:77,name:"CHARM'S 光復",kr:"참스 광복",area:"南浦洞",category:"潮流服飾",station:"南浦站步行約 6 分",time:"11:00–20:30",price:"₩₩",description:"南浦洞的甜酷女裝代表之一，適合找拍照感單品。",picks:["上衣","洋裝","配件"],query:"참스 광복",audience:"女裝",style:"網美系微辣高冷風"}
+      ,{id:78,name:"COS 光復",kr:"코스 광복",area:"南浦洞",category:"潮流服飾",station:"南浦站步行約 7 分",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"偏極簡、俐落和高質感剪裁，和百貨動線很搭。",picks:["襯衫","大衣","針織"],query:"코스 광복",audience:"都有",style:"極簡高質感"}
+      ,{id:79,name:"MUSINSA STANDARD 光復旗艦",kr:"무신사 스탠다드 광복",area:"南浦洞",category:"潮流服飾",station:"南浦站步行約 6 分",time:"10:30–20:00",price:"₩–₩₩",description:"港都區也能輕鬆補極簡基本款。",picks:["襯衫","長褲","西裝外套"],query:"무신사 스탠다드 광복",audience:"都有",style:"極簡都市通勤"}
+      ,{id:80,name:"TOPTEN 光復旗艦",kr:"탑텐 광복",area:"南浦洞",category:"潮流服飾",station:"南浦站步行約 6 分",time:"10:30–20:00",price:"₩",description:"便宜好搭的基本款品牌，適合掃貨。",picks:["T 恤","針織","褲款"],query:"탑텐 광복",audience:"都有",style:"平價基本款"}
+      ,{id:81,name:"Nike Centum",kr:"나이키 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"百貨裡的運動潮流核心品牌之一。",picks:["球鞋","運動上衣","帽款"],query:"나이키 센텀시티",audience:"都有",style:"運動機能"}
+      ,{id:82,name:"Adidas Centum 2",kr:"아디다스 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩",description:"運動街頭風很完整，適合一起看鞋服。",picks:["球鞋","外套","運動套裝"],query:"아디다스 센텀시티",audience:"都有",style:"運動街頭"}
+      ,{id:83,name:"MLB Centum",kr:"엠엘비 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩",description:"球帽、帽 T 與街頭休閒都很齊。",picks:["棒球帽","帽 T","外套"],query:"엠엘비 센텀시티",audience:"都有",style:"韓系街頭運動"}
+      ,{id:84,name:"Maison Kitsuné Centum",kr:"메종키츠네 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩₩",description:"法式休閒與圖騰元素很有辨識度。",picks:["Polo 衫","上衣","配件"],query:"메종키츠네 센텀시티",audience:"都有",style:"法式休閒街頭"}
+      ,{id:85,name:"A.P.C. Centum",kr:"아페쎄 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩₩",description:"簡約派很容易喜歡的巴黎極簡。",picks:["T 恤","牛仔褲","外套"],query:"아페쎄 센텀시티",audience:"都有",style:"法式極簡"}
+      ,{id:86,name:"Diesel Centum",kr:"디젤 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩₩₩",description:"想找更有態度的丹寧和街頭感可看。",picks:["牛仔褲","外套","配件"],query:"디젤 센텀시티",audience:"都有",style:"叛逆丹寧街頭"}
+      ,{id:87,name:"Spao Centum",kr:"스파오 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩–₩₩",description:"平價基本款很適合順手補貨。",picks:["T 恤","睡衣","聯名款"],query:"스파오 센텀시티",audience:"都有",style:"平價韓系基本款"}
+      ,{id:88,name:"8seconds Centum",kr:"에잇세컨즈 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩–₩₩",description:"百貨中的韓系快速時髦品牌。",picks:["襯衫","外套","長褲"],query:"에잇세컨즈 센텀시티",audience:"都有",style:"韓系都會休閒"}
+      ,{id:89,name:"Topten Centum",kr:"탑텐 센텀시티",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩",description:"高 CP 值基本款，適合補衣櫃空缺。",picks:["T 恤","針織","褲款"],query:"탑텐 센텀시티",audience:"都有",style:"平價基本款"}
     ];
 
     const areaOrder = ["全部區域","南浦洞","西面・田浦","海雲台・Centum","廣安里","機張・Osiria"];
@@ -147,12 +260,29 @@
     const areaNotes = {"南浦洞":{label:"港都經典",note:"市場、街牌與百貨最完整，新手首選。",route:"札嘎其站 → BIFF → 光復路 → 樂天百貨"},"西面・田浦":{label:"年輕潮流",note:"平價服飾、藥妝與選物密度最高。",route:"西面地下街 → MUSINSA → 田浦選物與咖啡"},"海雲台・Centum":{label:"海景質感",note:"百貨精品、設計品牌與伴手禮兼得。",route:"Centum City → 海理團路 → 海雲台大街"},"廣安里":{label:"夜景慢逛",note:"適合傍晚開始，購物後接海景晚餐。",route:"廣安里海灘 → m・millac → 廣安大橋夜景"},"機張・Osiria":{label:"折扣掃貨",note:"需留半天以上，適合集中買品牌折扣。",route:"Outlet → 樂天超市 → 海岸景點"}};
     const naverMap = q => `https://map.naver.com/p/search/${encodeURIComponent(q)}`;
     const googleMap = q => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q + " Busan")}`;
+    const brandNameMap = {
+      "SPAO":"SPAO","8seconds":"8seconds","ABC Mart":"ABC Mart","MLB":"MLB","Olive Young":"Olive Young",
+      "A.P.C.":"A.P.C.","메종키츠네":"Maison Kitsuné","뉴발란스":"New Balance","OIOI 컬렉션":"OIOI","로라로라":"rolarola",
+      "마하그리드":"mahagrid","세터":"SATUR","시티브리즈":"CITYBREEZE","와키윌리":"Wacky Willy","키르시":"Kirsh",
+      "젝시믹스":"XEXYMIX","룰루레몬":"Lululemon","잔스포츠":"JanSport","스케쳐스":"Skechers","프로스펙스":"PRO-SPECS",
+      "폴로(남성)":"Polo Ralph Lauren","띠어리(여성)":"Theory","리(영)":"LEE","알래스카":"ALASKA","페이지플린":"Page Flint",
+      "더 레노마":"THE RENOMA","플레이키즈프로":"Playkids Pro","오프로드":"Offroad","thisisneverthat":"thisisneverthat",
+      "REST & RECREATION":"REST & RECREATION","MUSINSA STANDARD":"MUSINSA STANDARD","디젤":"Diesel","캐나다구스":"Canada Goose",
+      "시리즈":"Series","바버(맨)":"Barbour","Nike":"Nike","The North Face":"The North Face","Levi's":"Levi's","Guess":"Guess",
+      "Mindbridge":"Mindbridge","Polham":"Polham","Lee":"Lee","Adidas":"Adidas","New Balance":"New Balance","Converse":"Converse","Vans":"Vans",
+      "ANDERSSON BELL":"ANDERSSON BELL","MSCHF":"MSCHF"
+    };
+    const formatBrand = item => {
+      if (typeof item === "string") return brandNameMap[item] ? `${item} (${brandNameMap[item]})` : item;
+      const base = brandNameMap[item.name] ? `${item.name} (${brandNameMap[item.name]})` : item.name;
+      return { ...item, label: base };
+    };
 
     let area = "全部區域", category = "全部種類", keyword = "", saved = JSON.parse(localStorage.getItem("busan-saved")||"[]"), savedOnly = false;
     const areaPills = document.getElementById("areaPills"), categoryPills = document.getElementById("categoryPills"), grid = document.getElementById("grid"), routes = document.getElementById("routes"), count = document.getElementById("count"), empty = document.getElementById("empty"), search = document.getElementById("search"), savedBtn = document.getElementById("savedBtn"), savedCount = document.getElementById("savedCount"), showAll = document.getElementById("showAll");
     function renderPills(){ areaPills.innerHTML = areaOrder.map(x=>`<button class="${x===area?"active":""}" data-area="${x}">${x}</button>`).join(""); categoryPills.innerHTML = areaCategories[area].map(x=>`<button class="${x===category?"active":""}" data-category="${x}">${x}</button>`).join(""); areaPills.querySelectorAll("button").forEach(b=>b.onclick=()=>{area=b.dataset.area; category="全部種類"; render();}); categoryPills.querySelectorAll("button").forEach(b=>b.onclick=()=>{category=b.dataset.category; render();}); }
     function renderRoutes(){ routes.innerHTML = Object.entries(areaNotes).slice(0,3).map(([name, item], i)=>`<article><span class="route-num">0${i+1}</span><div><p>${item.label}</p><h3>${name}</h3><span>${item.note}</span></div><div class="route-line"><i></i><p>${item.route}</p></div><button data-area="${name}">看這區店家 ↗</button></article>`).join(""); routes.querySelectorAll("button").forEach(b=>b.onclick=()=>{area=b.dataset.area; category="全部種類"; location.hash="#explore"; render();}); }
-    function render(){ renderPills(); renderRoutes(); const visible = shops.filter(s=> (area==="全部區域"||s.area===area) && (category==="全部種類"||s.category===category) && `${s.name}${s.kr}${s.area}${s.category}${s.picks.join("")}${s.description}`.toLowerCase().includes(keyword.toLowerCase()) && (!savedOnly || saved.includes(s.id))); count.textContent = String(visible.length).padStart(2,"0"); savedCount.textContent = saved.length; savedBtn.classList.toggle("active", savedOnly); showAll.style.display = savedOnly ? "inline" : "none"; grid.innerHTML = visible.map((s,i)=>`<article class="shop-card ${s.featured?"featured":""}"><div class="card-top"><span class="index">${String(i+1).padStart(2,"0")}</span><button class="heart ${saved.includes(s.id)?"saved":""}" data-save="${s.id}">${saved.includes(s.id)?"♥":"♡"}</button></div><div class="tags"><span>${s.area}</span><span>${s.category}</span></div><h3>${s.name}</h3><p class="kr">${s.kr}</p><p class="description">${s.description}</p><dl><div><dt>最近交通</dt><dd>${s.station}</dd></div><div><dt>建議時段</dt><dd>${s.time}</dd></div><div><dt>預算感</dt><dd>${s.price}</dd></div></dl><div class="picks"><b>編輯選物</b>${s.picks.map(p=>`<span>＋ ${p}</span>`).join("")}</div>${s.storeHighlights?`<details class="highlights"><summary>百貨延伸店家</summary><div>${s.storeHighlights.map(x=>`<span>${x}</span>`).join("")}</div></details>`:""}<div class="map-actions"><a href="${naverMap(s.query)}" target="_blank" rel="noreferrer">Naver Map <span>↗</span></a><a href="${googleMap(s.query)}" target="_blank" rel="noreferrer">Google Maps <span>↗</span></a></div></article>`).join(""); empty.style.display = visible.length ? "none" : "block"; grid.querySelectorAll("[data-save]").forEach(btn=>btn.onclick=()=>{const id=Number(btn.dataset.save); saved = saved.includes(id)?saved.filter(x=>x!==id):[...saved,id]; localStorage.setItem("busan-saved", JSON.stringify(saved)); render();}); }
+    function render(){ renderPills(); renderRoutes(); const visible = shops.filter(s=> (area==="全部區域"||s.area===area) && (category==="全部種類"||s.category===category) && `${s.name}${s.kr}${s.area}${s.category}${s.picks.join("")}${s.description}`.toLowerCase().includes(keyword.toLowerCase()) && (!savedOnly || saved.includes(s.id))); count.textContent = String(visible.length).padStart(2,"0"); savedCount.textContent = saved.length; savedBtn.classList.toggle("active", savedOnly); showAll.style.display = savedOnly ? "inline" : "none"; grid.innerHTML = visible.map((s,i)=>`<article class="shop-card ${s.featured?"featured":""}"><div class="card-top"><span class="index">${String(i+1).padStart(2,"0")}</span><button class="heart ${saved.includes(s.id)?"saved":""}" data-save="${s.id}">${saved.includes(s.id)?"♥":"♡"}</button></div><div class="tags"><span>${s.area}</span><span>${s.category}</span><span>${s.audience||"都有"}</span></div><h3>${s.name}</h3><p class="kr">${s.kr}</p><p class="description">${s.description}</p><dl><div><dt>最近交通</dt><dd>${s.station}</dd></div><div><dt>建議時段</dt><dd>${s.time}</dd></div><div><dt>預算感</dt><dd>${s.price}</dd></div><div><dt>性別／類型</dt><dd>${s.audience||"都有"}</dd></div><div><dt>風格</dt><dd>${s.style||"—"}</dd></div></dl><div class="picks"><b>編輯選物</b>${s.picks.map(p=>`<span>＋ ${p}</span>`).join("")}</div>${s.storeHighlights?`<details class="highlights"><summary>百貨延伸店家</summary><div>${s.storeHighlights.map(x=>{const item=formatBrand(x); return `<span>${item.label||item}</span><small style="display:block;margin-top:2px">${item.audience||""}${item.style?`・${item.style}`:""}</small>`;}).join("")}</div></details>`:""}<div class="map-actions"><a href="${naverMap(s.query)}" target="_blank" rel="noreferrer">Naver Map <span>↗</span></a><a href="${googleMap(s.query)}" target="_blank" rel="noreferrer">Google Maps <span>↗</span></a></div></article>`).join(""); empty.style.display = visible.length ? "none" : "block"; grid.querySelectorAll("[data-save]").forEach(btn=>btn.onclick=()=>{const id=Number(btn.dataset.save); saved = saved.includes(id)?saved.filter(x=>x!==id):[...saved,id]; localStorage.setItem("busan-saved", JSON.stringify(saved)); render();}); }
     search.addEventListener("input", e=>{ keyword = e.target.value; render(); });
     savedBtn.onclick = ()=>{ savedOnly = !savedOnly; render(); };
     showAll.onclick = ()=>{ savedOnly = false; render(); };
