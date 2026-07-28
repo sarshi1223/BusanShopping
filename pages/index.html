@@ -1,50 +1,155 @@
 <!doctype html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=https://busan-shopping-note.sarshi1223.chatgpt.site/#explore" />
-    <title>釜山逛街筆記</title>
-    <style>
-      :root { color-scheme: light; }
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #f3f0e8;
-        color: #172035;
-        font-family: Arial, "Noto Sans TC", sans-serif;
-      }
-      main {
-        max-width: 680px;
-        padding: 32px;
-        text-align: center;
-      }
-      h1 {
-        margin: 0 0 12px;
-        font-size: clamp(32px, 6vw, 56px);
-        line-height: 1.05;
-      }
-      p {
-        margin: 0 0 20px;
-        line-height: 1.7;
-      }
-      a {
-        display: inline-block;
-        padding: 14px 20px;
-        border: 1px solid #172035;
-        color: inherit;
-        text-decoration: none;
-        font-weight: 700;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>釜山逛街筆記</h1>
-      <p>GitHub Pages 版本會自動帶你前往最新的正式頁面。</p>
-      <a href="https://busan-shopping-note.sarshi1223.chatgpt.site/#explore">前往最新版本</a>
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>釜山逛街筆記｜Busan Shopping Note</title>
+  <meta name="description" content="依區域與種類整理的釜山購物互動攻略，附 Naver Map 與 Google Maps 連結。" />
+  <style>
+    :root{--ink:#172035;--paper:#f3f0e8;--white:#fffdf8;--blue:#1768ff;--yellow:#f5c843;--coral:#ff6f61;--line:#cbc6ba}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Noto Sans TC",sans-serif}
+    a{color:inherit;text-decoration:none} button,input{font:inherit}
+    .topbar{height:84px;padding:0 4.5vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:30}
+    .brand{display:flex;align-items:center;gap:10px;font-size:10px;line-height:1.05;letter-spacing:.08em}
+    .brand-mark{width:36px;height:36px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:900;font-family:Georgia,serif}
+    .topbar nav{display:flex;gap:34px;font-size:13px;font-weight:700}
+    .saved-button{border:1px solid var(--ink);background:transparent;padding:10px 14px;font-weight:700;cursor:pointer}
+    .saved-button span{background:var(--ink);color:#fff;display:inline-grid;place-items:center;width:20px;height:20px;margin-left:5px}
+    .saved-button.active{background:var(--yellow)}
+    .hero{min-height:680px;display:grid;grid-template-columns:1.05fr .95fr;position:relative;overflow:hidden;border-bottom:1px solid var(--ink)}
+    .hero-copy{padding:96px 6vw 74px;position:relative;z-index:2}
+    .eyebrow{font-size:11px;letter-spacing:.18em;font-weight:800;margin:0 0 22px}.eyebrow:before{content:"";width:38px;display:inline-block;border-top:2px solid currentColor;margin:0 10px 3px 0}
+    h1{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(66px,7.6vw,118px);line-height:.93;letter-spacing:-.07em;margin:0;font-weight:500}
+    .hero-lead{font-size:17px;line-height:1.8;margin:40px 0}
+    .hero-actions{display:flex;align-items:center;gap:28px}
+    .primary{background:var(--blue);color:#fff;padding:17px 24px;min-width:150px;display:flex;justify-content:space-between;font-weight:700;transition:.2s}
+    .updated{font-size:9px;line-height:1.5;letter-spacing:.12em}
+    .hero-art{background:var(--blue);position:relative;overflow:hidden;border-left:1px solid var(--ink);min-height:620px}
+    .sun{width:310px;height:310px;background:var(--yellow);border:1px solid var(--ink);border-radius:50%;position:absolute;right:-45px;top:70px}
+    .wave{height:120px;width:120%;border:2px solid var(--ink);border-radius:50%;position:absolute;left:-10%;background:var(--paper)}
+    .wave-1{bottom:77px;transform:rotate(-3deg)} .wave-2{bottom:-6px;transform:rotate(3deg);background:var(--yellow)}
+    .city-label{position:absolute;background:var(--white);border:1px solid var(--ink);padding:9px 12px;font-size:10px;font-weight:900;letter-spacing:.12em;box-shadow:4px 4px 0 var(--ink)}
+    .label-1{top:150px;left:12%;transform:rotate(-7deg)} .label-2{top:280px;right:10%;transform:rotate(5deg)} .label-3{bottom:165px;left:18%;transform:rotate(3deg)}
+    .postcard{position:absolute;left:18%;top:205px;width:190px;height:250px;background:var(--coral);border:1px solid var(--ink);box-shadow:10px 10px 0 rgba(23,32,53,.9);transform:rotate(-8deg);padding:25px;font-family:Georgia,serif;font-size:34px;line-height:.95;letter-spacing:-.05em}
+    .postcard i{display:block;margin-top:20px;font-size:18px;font-style:italic}
+    .hero-stamp{position:absolute;left:44%;top:70px;width:64px;height:64px;border-radius:50%;background:var(--yellow);border:1px solid var(--ink);z-index:3;display:grid;place-items:center;text-align:center;font-size:9px;font-weight:800;transform:rotate(10deg)}
+    .quick-strip{display:grid;grid-template-columns:1fr repeat(3,1.3fr);align-items:stretch;background:var(--yellow);border-bottom:1px solid var(--ink)}
+    .quick-strip>p{margin:0;padding:27px 4.5vw;display:flex;align-items:center;font-size:12px;font-weight:800}
+    .quick-strip>div{border-left:1px solid var(--ink);padding:20px 24px;display:grid;grid-template-columns:auto 1fr;gap:2px 15px}
+    .quick-strip b{font-family:Georgia,serif;font-size:28px;grid-row:span 2;font-weight:400}.quick-strip span{font-size:10px}.quick-strip strong{font-size:15px}
+    .explore{padding:95px 4.5vw 110px;max-width:1500px;margin:auto}
+    .section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:42px}
+    .section-heading h2,.tips h2{margin:0;font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(46px,5vw,76px);font-weight:500;letter-spacing:-.05em}
+    .section-heading>p{font-size:13px;line-height:1.8;margin:0;max-width:350px}
+    .stepper{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:22px}.step{border:1px solid var(--ink);background:var(--white);padding:16px 18px;box-shadow:4px 4px 0 rgba(23,32,53,.08)}
+    .step span{font:28px Georgia,serif;display:block;margin-bottom:8px}.step strong{display:block;font-size:14px;margin-bottom:4px}.step p{margin:0;font-size:12px;line-height:1.6}
+    .filter-shell{display:grid;gap:12px;border:1px solid var(--ink);background:rgba(255,255,255,.42);padding:20px;margin-bottom:24px}.section-label{font-size:10px;letter-spacing:.16em;font-weight:900;color:#5b6479}
+    .pills{display:flex;flex-wrap:wrap;gap:8px}.pills button{background:transparent;border:1px solid var(--ink);padding:9px 14px;border-radius:30px;cursor:pointer;font-size:12px;font-weight:700}.pills button.active{background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}
+    .search{min-width:230px;display:flex;align-items:center;border-bottom:1px solid var(--ink);padding:7px 0}.search span{font-size:24px;margin-right:8px}.search input{width:100%;background:transparent;border:0;outline:0;font-size:13px}
+    .result-meta{display:flex;justify-content:space-between;align-items:center;margin:25px 0 17px}.result-meta p{font-size:10px;letter-spacing:.14em}.result-meta p b{font-family:Georgia,serif;font-size:25px;margin-right:7px}.result-meta button{border:0;background:transparent;color:var(--blue);cursor:pointer;font-weight:800}
+    .shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}.shop-card{border:1px solid var(--ink);background:var(--white);padding:24px;display:flex;flex-direction:column;min-height:555px;position:relative;transition:transform .2s,box-shadow .2s}.shop-card:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--ink)} .shop-card.featured:before{content:"EDITOR'S PICK";position:absolute;right:-1px;top:60px;font-size:8px;letter-spacing:.1em;font-weight:900;background:var(--yellow);border:1px solid var(--ink);padding:6px 8px}
+    .card-top{display:flex;justify-content:space-between;align-items:start;margin-bottom:22px}.index{font:28px Georgia,serif}.heart{width:38px;height:38px;border:1px solid var(--ink);background:transparent;border-radius:50%;font-size:19px;cursor:pointer}.heart.saved{background:var(--coral)}
+    .tags{display:flex;gap:6px;margin-bottom:15px}.tags span{font-size:9px;font-weight:800;border:1px solid var(--line);border-radius:20px;padding:5px 8px}
+    .shop-card h3{font-family:Georgia,"Noto Serif TC",serif;font-size:25px;line-height:1.2;margin:0 0 4px;padding-right:25px}.kr{font-size:11px;color:#676b74;margin:0 0 19px}.description{font-size:13px;line-height:1.65;margin:0 0 18px}
+    dl{margin:0;border-top:1px solid var(--line)}dl>div{display:grid;grid-template-columns:70px 1fr;padding:8px 0;border-bottom:1px solid var(--line);font-size:11px}dt{color:#777}dd{margin:0;font-weight:700}
+    .picks{padding:17px 0;display:flex;flex-wrap:wrap;gap:5px}.picks b{width:100%;font-size:9px;letter-spacing:.1em;margin-bottom:3px}.picks span{font-size:10px;background:#eeece6;padding:5px 7px}
+    .highlights{border-top:1px solid var(--line);padding-top:14px;margin:0 0 12px}.highlights summary{cursor:pointer;font-size:11px;font-weight:800}.highlights div{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.highlights span{font-size:10px;border:1px solid var(--line);padding:5px 8px;background:#f8f5ee}
+    .map-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:auto;gap:6px}.map-actions a{border:1px solid var(--ink);padding:11px;display:flex;justify-content:space-between;font-size:10px;font-weight:800}.map-actions a:first-child{background:#03c75a;color:#071a0d}.map-actions a:last-child{background:var(--blue);color:#fff}
+    .empty{text-align:center;border:1px dashed var(--ink);padding:80px 20px}
+    .routes{background:var(--ink);color:#fff;padding:90px 4.5vw}.routes .section-heading{max-width:1360px;margin-left:auto;margin-right:auto}.route-list{max-width:1360px;margin:auto;border-top:1px solid #697083}.route-list article{min-height:170px;display:grid;grid-template-columns:80px 230px 1fr 140px;gap:25px;align-items:center;border-bottom:1px solid #697083}.route-num{font:34px Georgia,serif;color:var(--yellow)}.route-list article>div>p{font-size:9px;letter-spacing:.14em;margin:0 0 8px;color:var(--yellow)}.route-list h3{font:32px Georgia,"Noto Serif TC",serif;margin:0 0 8px}.route-list article>div>span{font-size:11px;color:#bbbfc9}.route-line{display:flex;align-items:center;gap:18px}.route-line i{width:10px;height:10px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 5px rgba(255,111,97,.2)}.route-line p{font-size:12px;margin:0}.route-list button{background:transparent;color:#fff;border:1px solid #7c8290;padding:12px;cursor:pointer}.route-list button:hover{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+    .tips{padding:100px 6vw;display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;background:var(--yellow)}.tips ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}.tips li{display:grid;grid-template-columns:65px 1fr;border-bottom:1px solid var(--ink);padding:22px 0}.tips li>b{font:25px Georgia,serif}.tips strong{font-size:15px}.tips li p{font-size:12px;line-height:1.6;margin:6px 0 0}
+    footer{min-height:210px;background:var(--paper);display:grid;grid-template-columns:1fr 1fr auto;align-items:center;padding:50px 4.5vw;gap:30px}footer p{font-size:10px;line-height:1.7}footer>a{font-size:10px;font-weight:900;border-bottom:1px solid var(--ink);padding-bottom:6px}
+    @media (max-width:1000px){.shop-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr 1fr;min-height:610px}.hero-copy{padding:75px 5vw 50px}.quick-strip{grid-template-columns:1fr repeat(3,1.1fr)}.route-list article{grid-template-columns:60px 190px 1fr 120px}}
+    @media (max-width:720px){.topbar{height:68px;padding:0 18px}.topbar nav{display:none}.saved-button{font-size:11px;padding:8px 9px}.brand-mark{width:32px;height:32px}.hero{display:flex;flex-direction:column;min-height:0}.hero-copy{padding:55px 22px 48px}.hero h1{font-size:64px}.hero-lead{font-size:14px;margin:28px 0}.hero-art{min-height:340px;border-left:0;border-top:1px solid var(--ink)}.sun{width:210px;height:210px;right:-25px;top:30px}.postcard{width:145px;height:190px;left:18%;top:70px;font-size:26px;padding:20px}.label-1{top:40px;left:5%}.label-2{top:160px;right:3%}.label-3{bottom:45px;left:15%}.hero-stamp{left:auto;right:22px;top:370px}.quick-strip{display:flex;overflow-x:auto}.quick-strip>p{min-width:145px;padding:22px 18px}.quick-strip>div{min-width:195px;padding:16px}.explore{padding:70px 18px 80px}.section-heading{display:block;margin-bottom:30px}.section-heading h2,.tips h2{font-size:48px}.section-heading>p{margin-top:20px}.stepper{grid-template-columns:1fr}.filter-shell{padding:16px}.pills{flex-wrap:nowrap;overflow-x:auto;padding:3px 3px 13px;margin:0 -3px;scrollbar-width:none}.pills button{white-space:nowrap}.search{width:100%;margin-top:8px}.shop-grid{grid-template-columns:1fr}.shop-card{min-height:525px;padding:22px}.routes{padding:70px 18px}.route-list article{grid-template-columns:45px 1fr;gap:16px;padding:24px 0}.route-line{grid-column:2}.route-list button{grid-column:2;width:max-content}.tips{padding:70px 22px;grid-template-columns:1fr;gap:45px}footer{grid-template-columns:1fr;padding:45px 22px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">B</span><span>BUSAN<br><b>SHOPPING NOTE</b></span></a>
+    <nav><a href="#explore">探索店家</a><a href="#route">路線靈感</a><a href="#tips">購物提醒</a></nav>
+    <button class="saved-button" id="savedBtn">♡ 我的收藏 <span id="savedCount">0</span></button>
+  </header>
+  <section class="hero" id="top">
+    <div class="hero-stamp">BUSAN<br>35° N</div>
+    <div class="hero-copy">
+      <p class="eyebrow">2026 BUSAN SHOPPING FIELD GUIDE</p>
+      <h1>釜山，<br>逛到海邊去。</h1>
+      <p class="hero-lead">從南浦洞的老市場，到田浦的街頭品牌。<br>把 <strong>30+ 個必逛據點</strong>，收進一份能直接帶著走的購物筆記。</p>
+      <div class="hero-actions">
+        <a class="primary" href="#explore">開始逛店 <span>↓</span></a>
+        <span class="updated">LAST UPDATED<br><b>JUL 2026</b></span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="sun"></div><div class="city-label label-1">NAMPO</div><div class="city-label label-2">SEOMYEON</div><div class="city-label label-3">HAEUNDAE</div><div class="wave wave-1"></div><div class="wave wave-2"></div><div class="postcard">SHOP<br>EAT<br>WALK<br><i>repeat</i></div>
+    </div>
+  </section>
+  <section class="quick-strip"><p>第一次去？從這裡開始</p><div><b>01</b><span>想一次逛齊</span><strong>南浦洞</strong></div><div><b>02</b><span>想找年輕潮流</span><strong>西面・田浦</strong></div><div><b>03</b><span>想舒服慢逛</span><strong>海雲台</strong></div></section>
+  <section class="explore" id="explore">
+    <div class="section-heading"><div><p class="eyebrow">FIND YOUR STOP</p><h2>先選區域，再選種類。</h2></div><p>先定區域，再把可選種類縮小到該區，動線會更清楚。<br>營業時間可能變動，出發前請再以地圖資訊確認。</p></div>
+    <div class="stepper"><div class="step"><span>01</span><strong>選區域</strong><p>先決定今天要往哪一區走。</p></div><div class="step"><span>02</span><strong>選種類</strong><p>種類只會顯示該區能逛到的內容。</p></div></div>
+    <div class="filter-shell"><div class="section-label">區域</div><div class="pills" id="areaPills"></div><div class="section-label">種類</div><div class="pills" id="categoryPills"></div><label class="search"><span>⌕</span><input id="search" placeholder="搜尋店名、品牌、商品…" aria-label="搜尋店家"></label></div>
+    <div class="result-meta"><p><b id="count">00</b> PLACES FOUND</p><button id="showAll" style="display:none">顯示全部 ×</button></div>
+    <div class="shop-grid" id="grid"></div>
+    <div class="empty" id="empty" style="display:none"><b>找不到符合條件的店家</b><p>換個區域或種類，或直接清空關鍵字再試一次。</p></div>
+  </section>
+  <section class="routes" id="route"><div class="section-heading light"><div><p class="eyebrow">ONE DAY ROUTES</p><h2>不用走回頭路</h2></div><p>以地鐵站為起終點的省力動線。<br>先逛小店、最後採買重物，雙手會感謝你。</p></div><div class="route-list" id="routes"></div></section>
+  <section class="tips" id="tips"><div><p class="eyebrow">BEFORE YOU SHOP</p><h2>出發前，<br>記住這 4 件事。</h2></div><ol><li><b>01</b><div><strong>韓國找路，Naver Map 優先</strong><p>Google Maps 可查店名與評論，但步行導航在韓國可能不完整。</p></div></li><li><b>02</b><div><strong>護照隨身，留意即時退稅</strong><p>大型店常可現場退稅；門檻與規則依店家最新公告為準。</p></div></li><li><b>03</b><div><strong>先小店，最後百貨或超市</strong><p>把零食、飲料與大量藥妝排在回飯店前，少提幾公里重物。</p></div></li><li><b>04</b><div><strong>百貨品牌先看底層關鍵字</strong><p>潮流服飾多在 B1 或 1F 到 2F，先看百貨延伸店家清單會更快。</p></div></li></ol></section>
+  <footer><div class="brand footer-brand"><span class="brand-mark">B</span><span>BUSAN<br><b>SHOPPING NOTE</b></span></div><p>資料綜整自使用者提供的旅遊文章與店家資訊，店家資訊僅供行程規劃參考。<br>請於出發前透過地圖確認最新營業資訊。</p><a href="#top">BACK TO TOP ↑</a></footer>
+  <script>
+    const shops = [
+      {id:1,name:"光復路時尚文化街",kr:"광복로 패션거리",area:"南浦洞",category:"潮流服飾",station:"南浦站 1、3 號出口",time:"約 10:00–21:00",price:"₩–₩₩",description:"釜山版明洞，運動品牌、韓系服飾與美妝一次逛齊；寬敞徒步區也很適合一路散步到 BIFF 廣場。",picks:["Nike / Adidas 旗艦店","ABC Mart","巷弄設計小店"],query:"광복로 패션거리 부산",featured:true},
+      {id:2,name:"樂天百貨 光復店",kr:"롯데백화점 광복점",area:"南浦洞",category:"百貨商場",station:"南浦站 8 號出口直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"百貨、超市與港景一次完成。建議傍晚上頂樓免費展望台，再到 B1 超市收尾採買。",picks:["B1 樂天超市","頂樓空中庭園","週六影島大橋開橋"],query:"롯데백화점 광복점",featured:true,storeHighlights:["SPAO","8seconds","ABC Mart","MLB","Olive Young"]},
+      {id:3,name:"國際市場",kr:"국제시장",area:"南浦洞",category:"傳統市場",station:"札嘎其站 7 號出口",time:"09:00–20:00・週日多休",price:"₩",description:"迷宮般的老市場，從棉被、生活雜貨到復古服飾都有，適合喜歡挖寶與在地感的人。",picks:["韓國棉被","編織菜瓜布","復古軍裝與生活雜貨"],query:"국제시장 부산"},
+      {id:4,name:"富平罐頭市場",kr:"부평깡통시장",area:"南浦洞",category:"美食伴手禮",station:"札嘎其站 3、5 號出口",time:"市場至 20:00・夜市 19:30–23:30",price:"₩",description:"白天是傳統市場，晚上變身小吃夜市；動線窄，建議避開週末 20–21 點。",picks:["釜山魚糕","拌粉條","巨人炸雞"],query:"부평깡통시장",featured:true},
+      {id:5,name:"KAKAO FRIENDS 釜山旗艦店",kr:"카카오프렌즈 부산플래그십스토어",area:"南浦洞",category:"生活雜貨",station:"南浦站步行約 5 分",time:"約 10:30–22:00",price:"₩–₩₩",description:"多層樓角色商品空間，餐具、文具與釜山限定周邊很適合送禮。",picks:["釜山限定商品","Ryan 周邊","實用文具家品"],query:"카카오프렌즈 부산플래그십스토어"},
+      {id:6,name:"B&C 麵包店",kr:"비엔씨 제과",area:"南浦洞",category:"美食伴手禮",station:"南浦站步行約 5 分",time:"約 09:30–22:00",price:"₩",description:"釜山老字號麵包店，適合安排為逛街中途補給或離開前的甜點伴手禮。",picks:["紅豆麵包","鮮奶油麵包","即買即吃"],query:"비엔씨 광복본점"},
+      {id:7,name:"西面地下街",kr:"서면지하도상가",area:"西面・田浦",category:"平價服飾",station:"西面站站內直結",time:"約 10:00–22:00",price:"₩",description:"不受天氣影響的平價掃貨主場，服飾、鞋包、美妝密集；出口多，記得以出口編號定位。",picks:["萬元韓系服飾","鞋包配件","雨天備案"],query:"서면지하도상가",featured:true},
+      {id:8,name:"樂天百貨 釜山本店",kr:"롯데백화점 부산본점",area:"西面・田浦",category:"百貨商場",station:"西面站直結",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"百貨、免稅店與餐飲集中，適合鎖定品牌與退稅採買，也可由地下街直接進入。",picks:["韓系設計品牌","樂天免稅店","雨天友善"],query:"롯데백화점 부산본점",storeHighlights:["8seconds","SPAO","ABC Mart","Avivere","TOPTEN"]},
+      {id:9,name:"Object 田浦店",kr:"오브젝트 전포점",area:"西面・田浦",category:"選物",station:"田浦站 7 號出口",time:"約 12:00–21:00",price:"₩–₩₩",description:"文具與插畫選物迷的口袋名單，多位韓國創作者商品集中，適合慢慢挑小禮物。",picks:["插畫文具","韓國創作者小物","質感送禮"],query:"오브젝트 전포점",featured:true},
+      {id:10,name:"MUSINSA STANDARD 西面",kr:"무신사 스탠다드 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 4 分",time:"約 11:00–21:30",price:"₩–₩₩",description:"韓國年輕族群常穿的極簡基本款，版型與尺寸齊全，男女裝都好搭。",picks:["西裝外套","寬版長褲","簡約基本款"],query:"무신사 스탠다드 서면",featured:true},
+      {id:11,name:"Olive Young 西面中央店",kr:"올리브영 서면중앙점",area:"西面・田浦",category:"藥妝美妝",station:"西面站 2 號出口",time:"約 10:00–22:30",price:"₩–₩₩",description:"商圈核心的大型門市，彩妝、保養、髮品和零食一次補齊；先比價組合包再結帳。",picks:["面膜與 CICA 保養","痘痘貼","Delight Project 零食"],query:"올리브영 서면중앙점",featured:true},
+      {id:12,name:"田浦咖啡街",kr:"전포카페거리",area:"西面・田浦",category:"咖啡休息",station:"田浦站 7 號出口",time:"多為 11:00–22:00",price:"₩–₩₩",description:"五金老街轉型的咖啡與小店聚落，建議午後安排 2–3 小時，邊逛選物邊休息。",picks:["獨立咖啡店","巷弄選物","拍照散策"],query:"전포카페거리 부산"},
+      {id:13,name:"新世界百貨 Centum City",kr:"신세계백화점 센텀시티점",area:"海雲台・Centum",category:"百貨商場",station:"Centum City 站直結",time:"10:30–20:00・週末至 20:30",price:"₩₩–₩₩₩",description:"從精品、韓國設計師品牌到 Spa Land 都在同一棟，雨天或想高效率購物的首選。",picks:["韓國設計師品牌","Spa Land","大型書店與餐飲"],query:"신세계백화점 센텀시티점",featured:true,storeHighlights:["thisisneverthat","REST & RECREATION","SPAO","ABC Mart","Olive Young"]},
+      {id:14,name:"海理團路",kr:"해리단길",area:"海雲台・Centum",category:"選物",station:"海雲台站 4 號出口",time:"多為 11:00–20:00",price:"₩–₩₩",description:"舊車站後方的低矮住宅改造街區，獨立品牌、底片相機與小型選物店密集。",picks:["獨立設計品牌","底片相機店","老宅咖啡"],query:"해리단길",featured:true},
+      {id:15,name:"LUFT MANSION",kr:"루프트맨션",area:"海雲台・Centum",category:"選物",station:"海雲台站步行約 7 分",time:"約 11:00–20:00",price:"₩₩",description:"海理團路的人氣生活風格選物店，從香氛、家飾到小眾配件都很有完成度。",picks:["香氛","家居選品","小眾飾品"],query:"루프트맨션 해리단길"},
+      {id:16,name:"BUSAN BADA SAND",kr:"부산바다샌드",area:"海雲台・Centum",category:"美食伴手禮",station:"海雲台站步行約 5 分",time:"約 10:00–19:00・售完為止",price:"₩",description:"白熊招牌的釜山限定夾心餅乾，以奶油與釜山蜂蜜製作，熱門時段可能排隊。",picks:["焦糖奶油夾心","海鷗白熊包裝","建議先買再逛"],query:"부산바다샌드 해운대점",featured:true},
+      {id:17,name:"海雲台大街 Olive Young",kr:"올리브영 해운대타운점",area:"海雲台・Centum",category:"藥妝美妝",station:"海雲台站 5 號出口",time:"約 10:00–23:00",price:"₩–₩₩",description:"從地鐵站走往沙灘途中即可採買，營業較晚，適合把藥妝補貨留到晚餐後。",picks:["熱門美妝","旅行裝與組合包","夜間補貨"],query:"올리브영 해운대타운점"},
+      {id:18,name:"樂天 Premium Outlet 東釜山",kr:"롯데프리미엄아울렛 동부산점",area:"機張・Osiria",category:"Outlet",station:"Osiria 站步行約 10 分",time:"10:30–20:30・週末至 21:00",price:"₩–₩₩₩",description:"適合安排半天以上的大型 Outlet，國際品牌、樂天超市與餐飲齊全，親子也好逛。",picks:["折扣運動品牌","國際精品","順遊海東龍宮寺"],query:"롯데프리미엄아울렛 동부산점",featured:true,storeHighlights:["MUSINSA STANDARD","8seconds","ABC Mart","Nike","The North Face"]},
+      {id:19,name:"m・millac",kr:"밀락더마켓",area:"廣安里",category:"選物",station:"廣安站轉公車或計程車",time:"約 10:00–24:00",price:"₩–₩₩",description:"面海的複合文化空間，餐飲、快閃選物與廣安大橋夜景一次完成，傍晚造訪最有氣氛。",picks:["海景餐飲","期間限定快閃","廣安大橋夜景"],query:"밀락더마켓 부산"},
+      {id:20,name:"釜田市場",kr:"부전시장",area:"西面・田浦",category:"傳統市場",station:"釜田站 1 號出口",time:"約 05:00–19:00",price:"₩",description:"比觀光商圈更生活化的傳統市場，乾貨、蔘品與日常食材選擇多，適合早上逛。",picks:["乾貨與海苔","人蔘藥材","在地市場感"],query:"부전시장 부산"},
+      {id:21,name:"Luft Basement",kr:"루프트베이스먼트",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 6 分",time:"12:00–20:00",price:"₩₩–₩₩₩",description:"釜山非常代表性的選貨店，常見韓國街頭品牌與設計師品牌，也有二樓咖啡空間可休息。",picks:["ANDERSSON BELL","MSCHF","thisisneverthat"],query:"루프트베이스먼트 부산 전포",featured:true},
+      {id:22,name:"BALANSA 西面",kr:"발란사 서면",area:"西面・田浦",category:"潮流服飾",station:"西面站步行約 8 分",time:"12:00–19:00",price:"₩₩",description:"滑板與街頭文化取向強烈的選物/服飾店，西面很適合排進同一段一起逛。",picks:["街頭品牌","Vintage","聯名單品"],query:"발란사 서면 부산"},
+      {id:23,name:"AVIVERE Company",kr:"아비베르 컴퍼니",area:"西面・田浦",category:"選物",station:"田浦站步行約 5 分",time:"11:00–23:00",price:"₩₩",description:"包款、飾品與生活物件的大型選物店，適合買伴手禮或補齊穿搭配件。",picks:["包包","飾品","家居小物"],query:"아비베르 컴퍼니 부산 전포",featured:true},
+      {id:24,name:"ADER ERROR 서면 스페이스",kr:"아더에러 서면 스페이스",area:"西面・田浦",category:"潮流服飾",station:"西面站／田浦站步行約 7 分",time:"13:00–21:00",price:"₩₩₩",description:"ADER ERROR 在釜山的代表據點，店內以實驗性空間與品牌服裝、配件為主。",picks:["設計感上衣","外套與配件","旗艦空間"],query:"아더에러 서면 스페이스",featured:true},
+      {id:25,name:"thisisneverthat Busan",kr:"디스이즈네버댓 부산",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站 B2F",time:"10:30–20:00",price:"₩₩–₩₩₩",description:"來自官方商店資訊的釜山店，位於新世界百貨 Centum City 地下樓層，街頭感很完整。",picks:["Logo Tee","Hoodie","Cap"],query:"thisisneverthat Busan Shinsegae Centum City",featured:true},
+      {id:26,name:"MUSINSA STANDARD Centum",kr:"무신사 스탠다드 센텀시티점",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:00",price:"₩–₩₩",description:"官方新聞稿確認的釜山第三間門市，除了基本款也有 SPORT、KIDS 線可看。",picks:["基本款襯衫","西裝外套","SPORT 線"],query:"무신사 스탠다드 센텀시티점",featured:true},
+      {id:27,name:"8seconds 釜山本店",kr:"에잇세컨즈 롯데백화점 부산본점",area:"西面・田浦",category:"潮流服飾",station:"西面站 2F",time:"10:00–20:00",price:"₩–₩₩",description:"韓系 SPA 服飾品牌，價格親民又好搭，是百貨內很實用的快速補貨點。",picks:["當季上衣","襯衫","休閒長褲"],query:"에잇세컨즈 롯데백화점 부산본점"},
+      {id:28,name:"SPAO 光復店",kr:"스파오 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩–₩₩",description:"韓國人氣 SPA，常被比作韓版 Uniqlo，放在百貨裡很適合順手補基本款。",picks:["基本上衣","聯名系列","家居睡衣"],query:"SPAO 롯데백화점 광복점"},
+      {id:29,name:"ABC Mart Centum",kr:"ABC마트 신세계 센텀시티점",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:30",price:"₩–₩₩",description:"運動鞋與潮流鞋款一次看齊，若你要找 Nike、Adidas、New Balance 這裡很有效率。",picks:["球鞋","運動鞋","鞋襪配件"],query:"ABC마트 신세계 센텀시티점"},
+      {id:30,name:"REST & RECREATION",kr:"레스트앤레크레이션",area:"海雲台・Centum",category:"潮流服飾",station:"Centum City 站直結",time:"10:30–20:30",price:"₩₩–₩₩₩",description:"在新世界百貨可見到的韓系時裝品牌，適合喜歡俐落線條和輕奢感的人。",picks:["上衣","外套","簡潔搭配"],query:"레스트앤레크레이션 센텀시티"},
+      {id:31,name:"MLB 釜山本店",kr:"엠엘비 롯데백화점 광복점",area:"南浦洞",category:"潮流服飾",station:"南浦站直結",time:"10:30–20:00",price:"₩₩",description:"韓系街頭風很強的帽款與休閒服飾品牌，百貨內常見，適合快速加購一頂帽子。",picks:["棒球帽","運動風上衣","輕街頭單品"],query:"엠엘비 롯데백화점 광복점"},
+      {id:32,name:"TOPTEN 西面店",kr:"탑텐 서면",area:"西面・田浦",category:"平價服飾",station:"西面站步行約 5 分",time:"10:30–22:00",price:"₩",description:"在地人很常買的高 CP 值基本款品牌，若想補衣櫃缺口很方便。",picks:["T 恤","襯衫","休閒褲"],query:"탑텐 서면 부산"},
+      {id:33,name:"Olive Young Centum",kr:"올리브영 센텀시티점",area:"海雲台・Centum",category:"藥妝美妝",station:"Centum City 站直結",time:"10:30–22:00",price:"₩–₩₩",description:"百貨動線中的便利補貨點，買完百貨服飾順手帶走藥妝最省時。",picks:["面膜","彩妝","旅行組"],query:"올리브영 센텀시티점"},
+      {id:34,name:"Nerdy 田浦店",kr:"널디 전포",area:"西面・田浦",category:"潮流服飾",station:"田浦站步行約 6 分",time:"12:00–20:30",price:"₩₩",description:"韓國年輕族群常見的街頭運動風品牌，若喜歡大 Logo 與寬鬆版型可以直接收。",picks:["運動套裝","Logo 外套","帽踢"],query:"널디 전포 부산"}
+    ];
+
+    const areaOrder = ["全部區域","南浦洞","西面・田浦","海雲台・Centum","廣安里","機張・Osiria"];
+    const areaCategories = {"全部區域":["全部種類","潮流服飾","平價服飾","藥妝美妝","選物","百貨商場","傳統市場","Outlet","生活雜貨","美食伴手禮","咖啡休息"],"南浦洞":["全部種類","潮流服飾","百貨商場","傳統市場","生活雜貨","美食伴手禮"],"西面・田浦":["全部種類","潮流服飾","平價服飾","藥妝美妝","選物","百貨商場","傳統市場","咖啡休息"],"海雲台・Centum":["全部種類","潮流服飾","藥妝美妝","選物","百貨商場","美食伴手禮"],"廣安里":["全部種類","選物"],"機張・Osiria":["全部種類","Outlet"]};
+    const areaNotes = {"南浦洞":{label:"港都經典",note:"市場、街牌與百貨最完整，新手首選。",route:"札嘎其站 → BIFF → 光復路 → 樂天百貨"},"西面・田浦":{label:"年輕潮流",note:"平價服飾、藥妝與選物密度最高。",route:"西面地下街 → MUSINSA → 田浦選物與咖啡"},"海雲台・Centum":{label:"海景質感",note:"百貨精品、設計品牌與伴手禮兼得。",route:"Centum City → 海理團路 → 海雲台大街"},"廣安里":{label:"夜景慢逛",note:"適合傍晚開始，購物後接海景晚餐。",route:"廣安里海灘 → m・millac → 廣安大橋夜景"},"機張・Osiria":{label:"折扣掃貨",note:"需留半天以上，適合集中買品牌折扣。",route:"Outlet → 樂天超市 → 海岸景點"}};
+    const naverMap = q => `https://map.naver.com/p/search/${encodeURIComponent(q)}`;
+    const googleMap = q => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q + " Busan")}`;
+
+    let area = "全部區域", category = "全部種類", keyword = "", saved = JSON.parse(localStorage.getItem("busan-saved")||"[]"), savedOnly = false;
+    const areaPills = document.getElementById("areaPills"), categoryPills = document.getElementById("categoryPills"), grid = document.getElementById("grid"), routes = document.getElementById("routes"), count = document.getElementById("count"), empty = document.getElementById("empty"), search = document.getElementById("search"), savedBtn = document.getElementById("savedBtn"), savedCount = document.getElementById("savedCount"), showAll = document.getElementById("showAll");
+    function renderPills(){ areaPills.innerHTML = areaOrder.map(x=>`<button class="${x===area?"active":""}" data-area="${x}">${x}</button>`).join(""); categoryPills.innerHTML = areaCategories[area].map(x=>`<button class="${x===category?"active":""}" data-category="${x}">${x}</button>`).join(""); areaPills.querySelectorAll("button").forEach(b=>b.onclick=()=>{area=b.dataset.area; category="全部種類"; render();}); categoryPills.querySelectorAll("button").forEach(b=>b.onclick=()=>{category=b.dataset.category; render();}); }
+    function renderRoutes(){ routes.innerHTML = Object.entries(areaNotes).slice(0,3).map(([name, item], i)=>`<article><span class="route-num">0${i+1}</span><div><p>${item.label}</p><h3>${name}</h3><span>${item.note}</span></div><div class="route-line"><i></i><p>${item.route}</p></div><button data-area="${name}">看這區店家 ↗</button></article>`).join(""); routes.querySelectorAll("button").forEach(b=>b.onclick=()=>{area=b.dataset.area; category="全部種類"; location.hash="#explore"; render();}); }
+    function render(){ renderPills(); renderRoutes(); const visible = shops.filter(s=> (area==="全部區域"||s.area===area) && (category==="全部種類"||s.category===category) && `${s.name}${s.kr}${s.area}${s.category}${s.picks.join("")}${s.description}`.toLowerCase().includes(keyword.toLowerCase()) && (!savedOnly || saved.includes(s.id))); count.textContent = String(visible.length).padStart(2,"0"); savedCount.textContent = saved.length; savedBtn.classList.toggle("active", savedOnly); showAll.style.display = savedOnly ? "inline" : "none"; grid.innerHTML = visible.map((s,i)=>`<article class="shop-card ${s.featured?"featured":""}"><div class="card-top"><span class="index">${String(i+1).padStart(2,"0")}</span><button class="heart ${saved.includes(s.id)?"saved":""}" data-save="${s.id}">${saved.includes(s.id)?"♥":"♡"}</button></div><div class="tags"><span>${s.area}</span><span>${s.category}</span></div><h3>${s.name}</h3><p class="kr">${s.kr}</p><p class="description">${s.description}</p><dl><div><dt>最近交通</dt><dd>${s.station}</dd></div><div><dt>建議時段</dt><dd>${s.time}</dd></div><div><dt>預算感</dt><dd>${s.price}</dd></div></dl><div class="picks"><b>編輯選物</b>${s.picks.map(p=>`<span>＋ ${p}</span>`).join("")}</div>${s.storeHighlights?`<details class="highlights"><summary>百貨延伸店家</summary><div>${s.storeHighlights.map(x=>`<span>${x}</span>`).join("")}</div></details>`:""}<div class="map-actions"><a href="${naverMap(s.query)}" target="_blank" rel="noreferrer">Naver Map <span>↗</span></a><a href="${googleMap(s.query)}" target="_blank" rel="noreferrer">Google Maps <span>↗</span></a></div></article>`).join(""); empty.style.display = visible.length ? "none" : "block"; grid.querySelectorAll("[data-save]").forEach(btn=>btn.onclick=()=>{const id=Number(btn.dataset.save); saved = saved.includes(id)?saved.filter(x=>x!==id):[...saved,id]; localStorage.setItem("busan-saved", JSON.stringify(saved)); render();}); }
+    search.addEventListener("input", e=>{ keyword = e.target.value; render(); });
+    savedBtn.onclick = ()=>{ savedOnly = !savedOnly; render(); };
+    showAll.onclick = ()=>{ savedOnly = false; render(); };
+    render();
+  </script>
+</body>
 </html>
