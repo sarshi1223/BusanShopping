@@ -315,12 +315,11 @@
     const styleGroup = (s) => {
       const text = `${s.style||""}${s.name||""}`.toLowerCase();
       if (/(xexymix|rest & recreation|rolarola|kirsh|charm|citybreeze|page flint|마르디|girls|女裝)/i.test(text)) return "女裝";
-      if (/(musinsa standard|cos|theory|uniqlo|zara|h&m|spao|8seconds|topten|polham)/i.test(text)) return "極簡／基本款";
-      if (/(nike|adidas|new balance|abc mart|mlb|lululemon|skechers|pro-specs|xexymix)/i.test(text)) return "運動／機能";
+      if (/(musinsa standard|cos|theory|uniqlo|zara|h&m|spao|8seconds|topten|polham|a\.p\.c|the renoma|page flint)/i.test(text)) return "極簡／基本款";
+      if (/(nike|adidas|new balance|abc mart|mlb|lululemon|skechers|pro-specs|xexymix|north face|canada goose|alaska|jansport|offroad)/i.test(text)) return "運動／機能";
       if (/(thisisneverthat|ader|balansa|kasina|wacky|street|mahagrid|oioi|mschf|mardi|nerdy)/i.test(text)) return "街頭／潮流";
       if (/(polo|levi|lee|guess|diesel|barbour|mindbridge|series)/i.test(text)) return "丹寧／美式";
-      if (/(north face|canada goose|alaska|jansport|offroad)/i.test(text)) return "戶外／機能";
-      if (/(gentle monster|a.p.c|maison kitsuné|cos|the renoma|theory)/i.test(text)) return "極簡／質感";
+      if (/(gentle monster|maison kitsuné|cos|theory)/i.test(text)) return "極簡／質感";
       return "選物／混搭";
     };
     const styleOptions = () => {
