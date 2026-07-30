@@ -317,6 +317,7 @@
     const mallsForArea = () => shops.filter(s=>s.category==="百貨商場" && (area==="全部區域" || s.area===area));
     const styleGroup = (s) => {
       const text = `${s.style||""}${s.name||""}`.toLowerCase();
+      if (s.audience === "女裝") return "女裝";
       if (/(xexymix|rest & recreation|rolarola|kirsh|charm|citybreeze|page flint|마르디|girls|女裝)/i.test(text)) return "女裝";
       if (/(musinsa standard|cos|theory|uniqlo|zara|h&m|spao|8seconds|topten|polham|a\.p\.c|the renoma|page flint)/i.test(text)) return "極簡／基本款";
       if (/(nike|adidas|new balance|abc mart|mlb|lululemon|skechers|pro-specs|xexymix|north face|canada goose|alaska|jansport|offroad)/i.test(text)) return "運動／機能";
