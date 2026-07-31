@@ -54,6 +54,7 @@
     .shop-card h3{font-family:Georgia,"Noto Serif TC",serif;font-size:25px;line-height:1.2;margin:0 0 4px;padding-right:25px}.kr{font-size:11px;color:#676b74;margin:0 0 19px}.description{font-size:13px;line-height:1.65;margin:0 0 18px}
     dl{margin:0;border-top:1px solid var(--line)}dl>div{display:grid;grid-template-columns:70px 1fr;padding:8px 0;border-bottom:1px solid var(--line);font-size:11px}dt{color:#777}dd{margin:0;font-weight:700}
     .picks{padding:17px 0;display:flex;flex-wrap:wrap;gap:5px}.picks b{width:100%;font-size:9px;letter-spacing:.1em;margin-bottom:3px}.picks span{font-size:10px;background:#eeece6;padding:5px 7px}
+    .official-links{display:flex;flex-wrap:wrap;gap:8px;border-top:1px solid var(--line);padding-top:14px;margin-top:auto}.official-links a{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--ink);background:#f7f7f2;padding:8px 10px;font-size:10px;font-weight:800;line-height:1.2}
     .highlights{border-top:1px solid var(--line);padding-top:14px;margin:0 0 12px}.highlights summary{cursor:pointer;font-size:11px;font-weight:800}.highlights summary::-webkit-details-marker{display:none}.highlights summary:before{content:"▾ ";margin-right:2px}.highlights[open] summary:before{content:"▴ ";}.brand-grid{display:grid;gap:8px;margin-top:12px}.brand-card{border:1px solid var(--line);background:#f8f5ee;padding:10px 12px;display:grid;gap:4px}.brand-card h4{margin:0;font-size:12px;line-height:1.35}.brand-card p{margin:0;font-size:10px;line-height:1.5;color:#525764}.brand-card .mini-meta{display:flex;flex-wrap:wrap;gap:6px}.brand-card .mini-meta span{font-size:9px;font-weight:800;border:1px solid var(--line);padding:3px 6px;background:var(--white)}.sub-filter{border-top:1px solid var(--line);padding-top:12px}.sub-filter .section-label{margin-bottom:8px}.route-nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.route-nav button{background:transparent;border:1px solid rgba(255,255,255,.32);color:#fff;padding:10px 16px;border-radius:999px;font-size:11px;font-weight:800;cursor:pointer;letter-spacing:.05em;transition:.2s}.route-nav button:hover{background:rgba(255,255,255,.08)}.route-nav button.active{background:var(--yellow);color:var(--ink);border-color:var(--yellow);box-shadow:0 8px 24px rgba(0,0,0,.16)}.route-shell{max-width:1360px;margin:auto}.route-panel{border:1px solid #697083;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));padding:32px 28px 30px;border-radius:24px;box-shadow:0 14px 34px rgba(0,0,0,.12);position:relative;overflow:hidden}.route-panel:before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--yellow),#ffd9a8,rgba(255,255,255,0));opacity:.85}.route-panel h3{margin:0 0 10px;font:32px Georgia,"Noto Serif TC",serif}.route-panel p.lead{margin:0 0 18px;font-size:13px;line-height:1.8;color:#d9dce4;max-width:820px}.route-block{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:16px 0;border-top:1px solid #697083}.route-block:first-of-type{border-top:0}.route-block b{font-size:13px;color:var(--yellow);padding-top:2px;display:inline-flex;align-items:center}.route-block b:after{content:"";display:inline-block;width:22px;height:1px;background:rgba(255,220,121,.5);margin-left:10px}.route-block ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}.route-block li{font-size:13px;line-height:1.7;color:#eef1f7}.route-block small{display:block;margin-top:4px;color:#b6bbc9;font-size:11px;line-height:1.5}
     .map-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:auto;gap:6px}.map-actions a{border:1px solid var(--ink);padding:11px;display:flex;justify-content:space-between;font-size:10px;font-weight:800}.map-actions a:first-child{background:#03c75a;color:#071a0d}.map-actions a:last-child{background:var(--blue);color:#fff}
     .empty{text-align:center;border:1px dashed var(--ink);padding:80px 20px}
@@ -302,6 +303,62 @@
       "Mindbridge":"Mindbridge","Polham":"Polham","Lee":"Lee","Adidas":"Adidas","New Balance":"New Balance","Converse":"Converse","Vans":"Vans",
       "ANDERSSON BELL":"ANDERSSON BELL","MSCHF":"MSCHF"
     };
+    const shopLinkMap = {
+      "MUSINSA STANDARD": { website: "https://global.musinsa.com/us/brands/musinsastandard", instagram: "https://www.instagram.com/musinsa_standard/" },
+      "MUSINSA STANDARD 西面": { website: "https://global.musinsa.com/us/brands/musinsastandard", instagram: "https://www.instagram.com/musinsa_standard/" },
+      "MUSINSA STANDARD Centum": { website: "https://global.musinsa.com/us/brands/musinsastandard", instagram: "https://www.instagram.com/musinsa_standard/" },
+      "MUSINSA STANDARD 光復": { website: "https://global.musinsa.com/us/brands/musinsastandard", instagram: "https://www.instagram.com/musinsa_standard/" },
+      "SPAO": { website: "https://spao.co.kr/" },
+      "SPAO 西面店": { website: "https://spao.co.kr/" },
+      "SPAO 光復店": { website: "https://spao.co.kr/" },
+      "SPAO Centum": { website: "https://spao.co.kr/" },
+      "8seconds": { website: "https://www.8seconds.co.kr/" },
+      "8seconds 西面店": { website: "https://www.8seconds.co.kr/" },
+      "8seconds Centum": { website: "https://www.8seconds.co.kr/" },
+      "UNIQLO": { website: "https://www.uniqlo.com/kr/ko/" },
+      "UNIQLO 西面店": { website: "https://www.uniqlo.com/kr/ko/" },
+      "UNIQLO 光復店": { website: "https://www.uniqlo.com/kr/ko/" },
+      "UNIQLO Centum": { website: "https://www.uniqlo.com/kr/ko/" },
+      "ZARA": { website: "https://www.zara.com/kr/" },
+      "ZARA 西面店": { website: "https://www.zara.com/kr/" },
+      "ZARA 光復店": { website: "https://www.zara.com/kr/" },
+      "ZARA Centum": { website: "https://www.zara.com/kr/" },
+      "H&M": { website: "https://www2.hm.com/ko_kr/index.html" },
+      "H&M 西面店": { website: "https://www2.hm.com/ko_kr/index.html" },
+      "H&M 光復店": { website: "https://www2.hm.com/ko_kr/index.html" },
+      "Nike": { website: "https://www.nike.com/kr/" },
+      "Nike 西面": { website: "https://www.nike.com/kr/" },
+      "Nike 光復店": { website: "https://www.nike.com/kr/" },
+      "NIKE Centum": { website: "https://www.nike.com/kr/" },
+      "Adidas": { website: "https://www.adidas.co.kr/" },
+      "Adidas 西面": { website: "https://www.adidas.co.kr/" },
+      "Adidas 光復店": { website: "https://www.adidas.co.kr/" },
+      "Adidas Centum": { website: "https://www.adidas.co.kr/" },
+      "New Balance": { website: "https://www.newbalance.co.kr/" },
+      "New Balance 西面": { website: "https://www.newbalance.co.kr/" },
+      "New Balance Centum": { website: "https://www.newbalance.co.kr/" },
+      "Olive Young": { website: "https://www.oliveyoung.co.kr/" , instagram: "https://www.instagram.com/oliveyoung_official/" },
+      "Olive Young 西面中央店": { website: "https://www.oliveyoung.co.kr/", instagram: "https://www.instagram.com/oliveyoung_official/" },
+      "Olive Young Centum": { website: "https://www.oliveyoung.co.kr/", instagram: "https://www.instagram.com/oliveyoung_official/" },
+      "KAKAO FRIENDS": { website: "https://store.kakaofriends.com/", instagram: "https://www.instagram.com/kakaofriends_official/" },
+      "KAKAO FRIENDS 釜山旗艦店": { website: "https://store.kakaofriends.com/", instagram: "https://www.instagram.com/kakaofriends_official/" },
+      "Mardi Mercredi": { instagram: "https://www.instagram.com/mardi_mercredi/" },
+      "Mardi Mercredi 西面": { instagram: "https://www.instagram.com/mardi_mercredi/" },
+      "Mardi Mercredi 光復": { instagram: "https://www.instagram.com/mardi_mercredi/" },
+      "REST & RECREATION": { instagram: "https://www.instagram.com/rest__recreation/" },
+      "REST & RECREATION Centum": { instagram: "https://www.instagram.com/rest__recreation/" },
+      "Lululemon": { website: "https://www.lululemon.co.kr/" },
+      "Lululemon Centum": { website: "https://www.lululemon.co.kr/" },
+      "The North Face": { website: "https://www.thenorthfacekorea.co.kr/" },
+      "The North Face Centum": { website: "https://www.thenorthfacekorea.co.kr/" },
+      "Levi's": { website: "https://www.levi.co.kr/" },
+      "Levi's Jean": { website: "https://www.levi.co.kr/" },
+      "Polo Ralph Lauren": { website: "https://www.ralphlauren.co.kr/" },
+      "Polo Ralph Lauren Centum": { website: "https://www.ralphlauren.co.kr/" },
+      "KIDA 西面": { website: "https://kidaunisex.imweb.me/35" },
+      "AVIVERE (아비베르컴퍼니)": { website: "https://www.avivere.co.kr/", instagram: "https://www.instagram.com/avivere_busan/" },
+      "AVIVERE Company": { website: "https://www.avivere.co.kr/", instagram: "https://www.instagram.com/avivere_busan/" }
+    };
     const formatBrand = item => {
       if (typeof item === "string") return brandNameMap[item] ? `${item} (${brandNameMap[item]})` : item;
       const base = brandNameMap[item.name] ? `${item.name} (${brandNameMap[item.name]})` : item.name;
@@ -480,7 +537,7 @@
     ];
     function renderRoutes(){ routeTabs.innerHTML = routeData.map((r,i)=>`<button class="${i===0?"active":""}" data-route="${r.id}">${r.tab}</button>`).join(""); routeTabs.querySelectorAll("button").forEach((b)=>b.onclick=()=>{routeTabs.querySelectorAll("button").forEach(x=>x.classList.remove("active")); b.classList.add("active"); const activeRoute = routeData.find(r=>r.id===b.dataset.route) || routeData[0]; routeShell.innerHTML = routeCard(activeRoute);}); const firstRoute = routeData.find(r=>r.id==="route-a") || routeData[0]; routeShell.innerHTML = routeCard(firstRoute); }
     function routeCard(route){ return `<article class="route-panel" id="${route.id}"><h3>${route.title}</h3><p class="lead">${route.lead}</p>${route.sections.map(sec=>`<div class="route-block"><b>${sec.label}</b><ul>${sec.items.map(it=>`<li>${it}</li>`).join("")}</ul></div>`).join("")}</article>`; }
-    function render(){ renderPills(); renderRoutes(); const visible = shops.filter(s=> (area==="全部區域"||s.area===area) && (category==="全部種類"||s.category===category) && (category!=="百貨商場" || mall==="全部百貨" || s.name===mall) && (category!=="潮流服飾" || style==="全部風格" || styleGroup(s)===style) && `${s.name}${s.kr}${s.area}${s.category}${s.picks.join("")}${s.description}${s.style||""}${styleGroup(s)}`.toLowerCase().includes(keyword.toLowerCase()) && (!savedOnly || saved.includes(s.id))); count.textContent = String(visible.length).padStart(2,"0"); savedCount.textContent = saved.length; savedBtn.classList.toggle("active", savedOnly); showAll.style.display = savedOnly ? "inline" : "none"; grid.innerHTML = visible.map((s,i)=>`<article class="shop-card ${s.featured?"featured":""}"><div class="card-top"><span class="index">${String(i+1).padStart(2,"0")}</span><button class="heart ${saved.includes(s.id)?"saved":""}" data-save="${s.id}">${saved.includes(s.id)?"♥":"♡"}</button></div><div class="tags"><span>${s.area}</span><span>${s.category}</span><span>${s.audience||"都有"}</span></div><h3>${s.name}</h3><p class="kr">${s.kr}</p><p class="description">${s.description}</p><dl><div><dt>最近交通</dt><dd>${s.station}</dd></div><div><dt>建議時段</dt><dd>${s.time}</dd></div><div><dt>預算感</dt><dd>${s.price}</dd></div><div><dt>性別／類型</dt><dd>${s.audience||"都有"}</dd></div><div><dt>風格</dt><dd>${styleGroup(s)}</dd></div></dl><div class="picks"><b>編輯選物</b>${s.picks.map(p=>`<span>＋ ${p}</span>`).join("")}</div>${s.storeHighlights?`<details class="highlights" open><summary>百貨延伸店家</summary><div class="brand-grid">${s.storeHighlights.map(x=>{const item=typeof x==="string" ? {label:brandLabel(x), audience:"", style:""} : {label:brandLabel(x), audience:x.audience||"", style:x.style||""}; return `<div class="brand-card"><h4>${item.label}</h4><div class="mini-meta">${item.audience?`<span>${item.audience}</span>`:""}</div><p>${item.style||"—"}</p></div>`;}).join("")}</div></details>`:""}<div class="map-actions"><a href="${naverMap(s.query)}" target="_blank" rel="noreferrer">Naver Map <span>↗</span></a><a href="${googleMap(s.query)}" target="_blank" rel="noreferrer">Google Maps <span>↗</span></a></div></article>`).join(""); empty.style.display = visible.length ? "none" : "block"; grid.querySelectorAll("[data-save]").forEach(btn=>btn.onclick=()=>{const id=Number(btn.dataset.save); saved = saved.includes(id)?saved.filter(x=>x!==id):[...saved,id]; localStorage.setItem("busan-saved", JSON.stringify(saved)); render();}); }
+    function render(){ renderPills(); renderRoutes(); const visible = shops.filter(s=> (area==="全部區域"||s.area===area) && (category==="全部種類"||s.category===category) && (category!=="百貨商場" || mall==="全部百貨" || s.name===mall) && (category!=="潮流服飾" || style==="全部風格" || styleGroup(s)===style) && `${s.name}${s.kr}${s.area}${s.category}${s.picks.join("")}${s.description}${s.style||""}${styleGroup(s)}`.toLowerCase().includes(keyword.toLowerCase()) && (!savedOnly || saved.includes(s.id))); count.textContent = String(visible.length).padStart(2,"0"); savedCount.textContent = saved.length; savedBtn.classList.toggle("active", savedOnly); showAll.style.display = savedOnly ? "inline" : "none"; grid.innerHTML = visible.map((s,i)=>{ const linkKey = (s.name||"").replace(/\(.*?\)/g,"").trim(); const links = shopLinkMap[s.name] || shopLinkMap[linkKey] || shopLinkMap[s.kr] || {}; return `<article class="shop-card ${s.featured?"featured":""}"><div class="card-top"><span class="index">${String(i+1).padStart(2,"0")}</span><button class="heart ${saved.includes(s.id)?"saved":""}" data-save="${s.id}">${saved.includes(s.id)?"♥":"♡"}</button></div><div class="tags"><span>${s.area}</span><span>${s.category}</span><span>${s.audience||"都有"}</span></div><h3>${s.name}</h3><p class="kr">${s.kr}</p><p class="description">${s.description}</p><dl><div><dt>最近交通</dt><dd>${s.station}</dd></div><div><dt>建議時段</dt><dd>${s.time}</dd></div><div><dt>預算感</dt><dd>${s.price}</dd></div><div><dt>性別／類型</dt><dd>${s.audience||"都有"}</dd></div><div><dt>風格</dt><dd>${styleGroup(s)}</dd></div></dl><div class="picks"><b>編輯選物</b>${s.picks.map(p=>`<span>＋ ${p}</span>`).join("")}</div>${(links.website||links.instagram)?`<div class="official-links">${links.website?`<a href="${links.website}" target="_blank" rel="noreferrer">官方網站 ↗</a>`:""}${links.instagram?`<a href="${links.instagram}" target="_blank" rel="noreferrer">Instagram ↗</a>`:""}</div>`:""}${s.storeHighlights?`<details class="highlights" open><summary>百貨延伸店家</summary><div class="brand-grid">${s.storeHighlights.map(x=>{const item=typeof x==="string" ? {label:brandLabel(x), audience:"", style:""} : {label:brandLabel(x), audience:x.audience||"", style:x.style||""}; return `<div class="brand-card"><h4>${item.label}</h4><div class="mini-meta">${item.audience?`<span>${item.audience}</span>`:""}</div><p>${item.style||"—"}</p></div>`;}).join("")}</div></details>`:""}<div class="map-actions"><a href="${naverMap(s.query)}" target="_blank" rel="noreferrer">Naver Map <span>↗</span></a><a href="${googleMap(s.query)}" target="_blank" rel="noreferrer">Google Maps <span>↗</span></a></div></article>`;}).join(""); empty.style.display = visible.length ? "none" : "block"; grid.querySelectorAll("[data-save]").forEach(btn=>btn.onclick=()=>{const id=Number(btn.dataset.save); saved = saved.includes(id)?saved.filter(x=>x!==id):[...saved,id]; localStorage.setItem("busan-saved", JSON.stringify(saved)); render();}); }
     search.addEventListener("input", e=>{ keyword = e.target.value; render(); });
     savedBtn.onclick = ()=>{ savedOnly = !savedOnly; render(); };
     showAll.onclick = ()=>{ savedOnly = false; render(); };
